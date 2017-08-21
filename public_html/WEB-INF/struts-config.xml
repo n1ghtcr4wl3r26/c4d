@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+  
+    <form-bean name="inputActionForm" type="cad.inputActionForm"/>
+    <form-bean name="beanMenu" type="cad.MenuForm"/>
+    <form-bean name="PasswordForm" type="cad.PasswordForm"/>
+    <form-bean name="textoForm" type="cad.textoForm"/>    
+    <form-bean name="reporteForm" type="cad.reporteForm"/>
+    <form-bean name="verificaForm" type="cad.verificaForm"/>
+    <form-bean name="ParametrosForm" type="cad.ParametrosForm"/>
+    <form-bean name="consultaForm" type="cad.consultaForm"/>
+    <form-bean name="carpetaForm" type="cad.carpetaForm"/>
+
+    <form-bean name="asicarForm" type="cad.asicarForm"/>
+    <form-bean name="discarForm" type="cad.discarForm"/>
+    <form-bean name="connitForm" type="cad.connitForm"/>
+    <form-bean name="condisForm" type="cad.condisForm"/>
+    
+  </form-beans>
+  <global-forwards>
+    <forward name="password" path="pagina.password"/>
+    <forward name="logout" path="/Login.jsp"/>
+    <forward name="parametros" path="pagina.parametros"/>
+    <forward name="reporte" path="pagina.reporte"/>
+    <forward name="verifica" path="pagina.verifica"/>
+    <forward name="texto" path="pagina.texto"/>  
+    <forward name="carpetas" path="pagina.carpetas"/>  
+    <forward name="consulta" path="pagina.consulta"/>
+      
+    <forward name="asicar" path="pagina.asicar"/>  
+    <forward name="discar" path="pagina.discar"/>  
+    <forward name="connit" path="pagina.connit"/>  
+    <forward name="condis" path="pagina.condis"/>
+    <forward name="inicial" path="pagina.inicial"/>
+  </global-forwards>
+  <action-mappings>
+  
+  <action path="/ingreso" type="cad.inputAction" name="inputActionForm" scope="request">
+      <forward name="ok" path="pagina.menu"/>
+      <forward name="nook" path="/Login.jsp"/>
+    </action>
+    
+    
+     <action path="/MenuAction" type="cad.MenuAction" name="beanMenu" scope="request">
+        
+    </action>
+    <action path="/password" type="cad.PasswordAction" name="PasswordForm" scope="request">
+      <forward name="volver" path="pagina.password"/>
+      <forward name="login" path="/Login.jsp"/>
+      <forward name="menu" path="pagina.menu"/>
+    </action>
+    <action path="/logout" type="cad.logout">
+      <forward name="volver" path="/Login.jsp"/>
+    </action>
+    <action path="/texto" type="cad.textoAction" name="textoForm" scope="request"/>
+    <action path="/generar" type="cad.generarAction" name="generarForm" scope="request"/>
+    <action path="/reporte" type="cad.reporteAction" name="reporteForm" scope="request"/>
+    <action path="/verifica" type="cad.verificaAction" name="verificaForm" scope="request"/>
+    <action path="/parametros" type="cad.ParametrosAction" name="ParametrosForm" scope="request"/>
+    <action path="/consulta" type="cad.consultaAction" name="consultaForm" scope="request"/>
+    <action path="/carpeta" type="cad.carpetaAction" name="carpetaForm" scope="request"/>
+
+    <action path="/asicar" type="cad.asicarAction" name="asicarForm" scope="request"/>
+    <action path="/discar" type="cad.discarAction" name="discarForm" scope="request"/>
+    <action path="/connit" type="cad.connitAction" name="connitForm" scope="request"/>
+    <action path="/condis" type="cad.condisAction" name="condisForm" scope="request"/>
+    
+  </action-mappings>
+  <message-resources parameter="cad.ApplicationResources"/>
+ <plug-in className="org.apache.struts.tiles.TilesPlugin">
+  <set-property value="/WEB-INF/tiles-defs.xml" property="definitions-config"/>
+  <set-property value="2" property="definitions-debug"/>
+  <set-property value="2" property="definitions-parser-details"/>
+  <set-property value="true" property="definitions-parse-validate"/>
+ </plug-in>
+</struts-config>

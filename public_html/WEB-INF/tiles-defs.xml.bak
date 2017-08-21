@@ -1,0 +1,116 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+  <!-- Página principal con menu-->
+  <definition name="mvertical" path="/tiles/mvertical.jsp">
+    <put name="title" value="Sumarios">
+    </put>
+    <put name="header" value="/tiles/pcabeza.jsp">
+    </put>
+    <put name="vertical" value="/tiles/vertical.jsp">
+    </put>
+    <put name="body" value="/tiles/pcuerpo.jsp">
+    </put>
+    <put name="footer" value="/tiles/ppie.jsp">
+    </put>
+  </definition>
+  <!-- Pagina principal sin menu-->
+  <definition name="mtitulo" path="/tiles/mtitulo.jsp">
+    <put name="title" value="Sumarios">
+    </put>
+    <put name="header" value="/tiles/pcabeza.jsp">
+    </put>
+    <put name="body" value="/tiles/pcuerpo.jsp">
+    </put>
+    <put name="footer" value="/tiles/ppie.jsp">
+    </put>
+  </definition>
+  <!-- Pagina inicial con solo el menu -->
+  <definition name="pagina.menu" extends="mvertical">
+    <put name="menu" value="menu"/>
+  </definition>
+  <!-- Pagina inicial -->
+  <definition name="pagina.inicial" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Listinic.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.denuncia" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Sumario.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.funcionario" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Funcionario.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.dictado" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Dictado.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.notificacion" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Notificacion.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.ampliacion" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Ampliacion.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.resolucion" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Resolucion.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.resarecu" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Resarecu.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.recextra" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Recextra.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.descargo" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Descargo.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.revocatoria" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Revocatoria.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.recurso" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Recurso.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.sancion" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Sancion.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.sumariante" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Sumariante.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.reporte" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Listado.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.reporte3" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Listado3.jsp"/>
+  </definition>
+  <!-- Pagina para cambiar la contraseña -->
+  <definition name="pagina.password" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Password.jsp"/>
+  </definition>
+</tiles-definitions>

@@ -1,0 +1,192 @@
+.blanco
+{COLOR: #FFFFFF; FONT-FAMILY: "Arial";}
+.sincolor
+{COLOR: #E1F0FF; FONT-FAMILY: "Arial";}
+.solofondo {
+    background-color: #E1F0FF
+}
+.soloborde {
+	border: 1px solid #345487; background-color: #F5F9FD;
+}
+.bordeListados {
+	border: 1px solid #345487; background-color: #F5F9FD;
+}
+.S12iz {
+	FONT-SIZE: 14px; COLOR: #0033CC; FONT-FAMILY: "Verdana"; TEXT-DECORATION: "Underline"; text-align:left; align="right";
+}
+.S12 {
+	FONT-SIZE: 14px; COLOR: #0033CC; FONT-FAMILY: "Verdana"; TEXT-DECORATION: "Underline"; text-align:left;
+}
+.S10 {
+	FONT-SIZE: 12px; COLOR: #0000B9; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; 
+}
+.S10d {
+	FONT-SIZE: 12px; COLOR: #0000B9; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:right;
+}
+.P10d {
+	FONT-SIZE: 12px; COLOR: #676767; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:right;
+}
+
+.S10c {
+	FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:center;
+}
+.S8 {
+	FONT-SIZE: 10px; COLOR: #0000B9; FONT-FAMILY: "Verdana"; TEXT-DECORATION: none; text-align:left;
+}
+
+.S8p {
+	FONT-SIZE: 8px; COLOR: #0000B9; FONT-FAMILY: "Verdana"; TEXT-DECORATION: none; text-align:left;
+}
+
+.S8c {
+	FONT-SIZE: 10px; COLOR: #FFFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:center;
+}
+
+.S8n {
+	FONT-SIZE: 10px; COLOR: #FFFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none;
+}
+
+.T10a {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: "Arial"; text-align: left; BACKGROUND-COLOR: #3558ad; height: 20px; text-indent: 5px;
+}
+.T8 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #FFFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:center;
+}
+.T8a {
+	background-color: #E6F2FF; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none;
+}
+.T8r {
+	background-color: #FF8C8C; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T8n {
+	background-color: #FFAE88; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T8am {
+	background-color: #FFFFB7; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T9i {
+	border: 1px solid #345487; background-color: #3558ad; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align: left;
+}
+.T9d {
+	border: 1px solid #345487; background-color: #3558ad; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align: right;
+}
+.soloresaltar {
+	border: 1px solid #345487; background-color: #6699FF; FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align: center;
+}
+.FondoVerde {
+	border: 1px solid #333333; background-color: #004e9b; FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-FAMILY: Arial; 
+}
+.FondoVerde10 {
+	border: 1px solid #333333; background-color: #004e9b; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #FFFFFF; FONT-FAMILY: Arial; 
+}
+.FondoBlanco10 {
+	border:  background-color: #FFFFFF; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #004e9b; FONT-FAMILY: Arial; 
+}
+
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none
+}
+SELECT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none;
+  
+}
+
+textarea {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none
+}
+
+td {
+  height: 16px;
+}
+
+.boton {
+  BACKGROUND: #F5F9FD; 
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  COLOR: #000000; 
+  CURSOR: hand; 
+  width: 75px;
+  FONT-SIZE: 10px; 
+  TEXT-DECORATION: none
+}
+
+.boton1 {
+  BACKGROUND: #F5F9FD; 
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  COLOR: #000066; 
+  CURSOR: hand; 
+  FONT-SIZE: 10px; 
+  TEXT-DECORATION: none
+}
+
+.boton1a {
+  BACKGROUND: #F5F9FD; 
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  width: 30px;
+  COLOR: #FFFFFF; 
+  CURSOR: hand; 
+  FONT-SIZE: 10px; 
+  TEXT-DECORATION: none
+}
+
+.boton2 {
+  BACKGROUND: #F5F9FD; 
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  width: 75px;
+  COLOR: #000066; 
+  CURSOR: hand; 
+  FONT-SIZE: 10px; 
+  TEXT-DECORATION: none
+}
+
+.boton3 {
+  BACKGROUND: #F5F9FD; 
+  background-image:url(imagen/icon-rnd-downarrow3.gif);
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  COLOR: #FFFFFF
+  CURSOR: hand; 
+  FONT-SIZE: 0px; 
+   width: 19px;
+ height: 19px;
+}
+.boton4 {
+  BACKGROUND: #F5F9FD; 
+  background-image:url(imagen/icon-selected.gif);
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  COLOR: #FFFFFF
+  CURSOR: hand; 
+  FONT-SIZE: 0px; 
+   width: 63px;
+ height: 19px;
+}
+
+TD.cabecera_menu {
+	COLOR: #232323; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-ALIGN: center
+}
+TD.entrada_menu {
+	BACKGROUND-COLOR: #dbe0e8; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; MARGIN-LEFT: 0.5em; PADDING-LEFT: 0.5em; TEXT-ALIGN: left
+}
+.message {
+  FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	COLOR: #004080;
+	font-size: 12px;
+	height: 25px;
+	vertical-align: middle;
+}

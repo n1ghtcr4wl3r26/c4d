@@ -1,0 +1,97 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+  <!-- Página principal con menu-->
+  <definition name="mvertical" path="/tiles/mvertical.jsp">
+    <put name="title" value="CAD" />
+    <put name="header" value="/tiles/pcabeza.jsp" />
+    <put name="vertical" value="/tiles/vertical2.jsp" />
+    <put name="body" value="/panel.jsp" />
+    <put name="footer" value="/tiles/ppie.jsp" />
+  </definition>
+  <!-- Pagina principal sin menu-->
+  <definition name="mtitulo" path="/tiles/mtitulo.jsp">
+    <put name="title" value="CAD" />
+    <put name="header" value="/tiles/pcabeza.jsp" />
+    <put name="body" value="/panel.jsp" />
+    <put name="footer" value="/tiles/ppie.jsp" />
+  </definition>
+  <!-- Pagina inicial con solo el menu -->
+  <definition name="pagina.menu" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/panel.jsp"/>
+  </definition>
+  <!-- Pagina inicial -->
+  <definition name="pagina.inicial" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/panel.jsp"/>
+  </definition>
+  <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.descargo" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Descargo.jsp"/>
+  </definition>
+    <!-- Pagina para subir la información recibida -->
+  <definition name="pagina.registro" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Registro.jsp"/>
+  </definition>
+    <!-- Pagina para cambiar la contraseña -->
+  <definition name="pagina.password" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Password.jsp"/>
+  </definition>
+    <!-- Pagina para parametros -->
+  <definition name="pagina.parametros" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/parametros.jsp"/>
+  </definition>
+      <!-- Pagina para reporte -->
+  <definition name="pagina.reporte" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/reporte.jsp"/>
+  </definition>
+      <!-- Pagina para verificar -->
+  <definition name="pagina.verifica" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/verifica.jsp"/>
+  </definition>
+      <!-- Pagina para texto -->  
+  <definition name="pagina.texto" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/texto.jsp"/>
+  </definition>
+      <!-- Pagina para gestion de carpetas -->  
+  <definition name="pagina.carpetas" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/carpetas.jsp"/>
+  </definition>
+
+  <definition name="pagina.asicar" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/asicar.jsp"/>
+  </definition>
+
+  <definition name="pagina.discar" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/discar.jsp"/>
+  </definition>
+
+  <definition name="pagina.connit" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/connit.jsp"/>
+  </definition>
+
+    <definition name="pagina.condis" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/condis.jsp"/>
+  </definition>
+  
+
+
+      <!-- Pagina para consultas -->  
+  <definition name="pagina.consulta" extends="mvertical">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/consulta.jsp"/>
+  </definition>
+  
+</tiles-definitions>
