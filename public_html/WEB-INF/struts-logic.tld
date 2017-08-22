@@ -7,10 +7,10 @@
 
 <!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
 <taglib>
-<tlibversion>1.2</tlibversion>
+<tlibversion>1.0</tlibversion>
 <jspversion>1.1</jspversion>
 <shortname>logic</shortname>
-<uri>http://struts.apache.org/tags-logic</uri>
+<uri>http://jakarta.apache.org/struts/tags-logic-1.0</uri>
 <tag>
 <name>empty</name>
 <tagclass>org.apache.struts.taglib.logic.EmptyTag</tagclass>
@@ -174,12 +174,12 @@
 <attribute>
 <name>id</name>
 <required>true</required>
-<rtexprvalue>false</rtexprvalue>
+<rtexprvalue>true</rtexprvalue>
 </attribute>
 <attribute>
 <name>indexId</name>
 <required>false</required>
-<rtexprvalue>false</rtexprvalue>
+<rtexprvalue>true</rtexprvalue>
 </attribute>
 <attribute>
 <name>length</name>
@@ -576,11 +576,6 @@
 <name>redirect</name>
 <tagclass>org.apache.struts.taglib.logic.RedirectTag</tagclass>
 <attribute>
-<name>action</name>
-<required>false</required>
-<rtexprvalue>true</rtexprvalue>
-</attribute>
-<attribute>
 <name>anchor</name>
 <required>false</required>
 <rtexprvalue>true</rtexprvalue>
@@ -637,11 +632,6 @@
 </attribute>
 <attribute>
 <name>transaction</name>
-<required>false</required>
-<rtexprvalue>true</rtexprvalue>
-</attribute>
-<attribute>
-<name>useLocalEncoding</name>
 <required>false</required>
 <rtexprvalue>true</rtexprvalue>
 </attribute>

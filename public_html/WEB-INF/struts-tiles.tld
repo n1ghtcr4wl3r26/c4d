@@ -8,10 +8,10 @@
 
 <!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
 <taglib>
-<tlibversion>1.2</tlibversion>
+<tlibversion>1.0</tlibversion>
 <jspversion>1.1</jspversion>
-<shortname>tiles</shortname>
-<uri>http://struts.apache.org/tags-tiles</uri>
+<shortname>Tiles Tag Library</shortname>
+<uri>http://jakarta.apache.org/struts/tags-tiles-1.1</uri>
 <tag>
 <name>insert</name>
 <tagclass>org.apache.struts.taglib.tiles.InsertTag</tagclass>
@@ -79,12 +79,12 @@
 <attribute>
 <name>controllerUrl</name>
 <required>false</required>
-<rtexprvalue>true</rtexprvalue>
+<rtexprvalue>false</rtexprvalue>
 </attribute>
 <attribute>
 <name>controllerClass</name>
 <required>false</required>
-<rtexprvalue>true</rtexprvalue>
+<rtexprvalue>false</rtexprvalue>
 </attribute>
 </tag>
 <tag>

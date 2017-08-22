@@ -3,6 +3,7 @@
    <hash n="adrs-workspace-properties">
       <value n="adrs-instance-binding" v="DefaultServer"/>
    </hash>
+   <value n="appTemplateId" v="#genericApplicationTemplate"/>
    <hash n="component-versions">
       <value n="oracle.adf.share.dt.migration.jps.JaznCredStoreMigratorHelper" v="11.1.1.1.0"/>
       <value n="oracle.adfdtinternal.model.ide.security.extension.AdfSecurityMigrator" v="11.1.1.1.0.13"/>
@@ -23,5 +24,4 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="cad.jpr"/></hash>
    </list>
-   <value n="packageCounter" v="2"/>
 </jws:workspace>

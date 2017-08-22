@@ -1,22 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
-   <value n="CachedConfigTable" v=""/>
    <hash n="component-versions">
-      <value n="oracle.adfdt.controller.adfc.source.migration.AdfControllerSchemaMigrator" v="11.1.1.1.0"/>
-      <value n="oracle.adfdt.controller.common.migrator.ProjectMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdt.controller.migrate.TrinidadDatabindingsProjectMigrator" v="11.1.2.0.0"/>
       <value n="oracle.adfdtinternal.dvt.datapresdt.migration.DVTDataMapMigrator" v="11.1.1.1.0.3"/>
-      <value n="oracle.adfdtinternal.model.ide.migration.ProjectMigrator" v="11.1.1.1.0.11.1.1"/>
       <value n="oracle.adfdtinternal.model.ide.security.wizard.FormPageMigrator" v="11.1.1.0.0"/>
       <value n="oracle.adfdtinternal.model.ide.security.wizard.JpsFilterMigrator" v="11.1.1.1.0"/>
-      <value n="oracle.adfdtinternal.model.ide.xmled.migration.ADFNodeMigrator" v="11.1.1.1.0.5"/>
-      <value n="oracle.adfdtinternal.model.ide.xmled.migration.PageDefinitionParameterValueMigrator" v="11.1.1.1.0.5"/>
-      <value n="oracle.adfdtinternal.model.ide.xmled.migration.WebXmlMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdtinternal.view.common.migration.wizards.MigrationHelper" v="11.1.1.1.0.3"/>
-      <value n="oracle.adfdtinternal.view.rich.binding.migration.JarResourceMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdtinternal.view.rich.migration.ComponentIdNodeMigratorHelper" v="11.1.1.1.0.01"/>
       <value n="oracle.adfdtinternal.view.rich.migration.LibraryVersionMigrator" v="11.1.1.1.0.1"/>
-      <value n="oracle.ide.model.Project" v="9.0.3.1;11.1.2.0.0"/>
+      <value n="oracle.ide.model.Project" v="11.1.2.0.0"/>
       <value n="oracle.ide.model.ResourcePathsMigrator" v="11.1.1.1.0"/>
       <value n="oracle.ideimpl.model.TechnologyScopeUpdateMigrator" v="11.1.2.0.0.4"/>
       <value n="oracle.jbo.dt.jdevx.deployment.JbdProjectMigrator" v="11.1.2.0.0"/>
@@ -36,68 +28,46 @@
       <value n="oracle.jdevimpl.webapp.WebAppContentSetNodeMigratorHelper" v="11.1.1"/>
       <value n="oracle.jdevimpl.webapp.WebAppProjectNodeMigratorHelper" v="11.1.2.0.0"/>
       <value n="oracle.jdevimpl.webservices.rest.migration.RestPathMigrator" v="11.1.2.0.0"/>
-      <value n="oracle.jdevimpl.webservices.WebServicesMigratorHelper" v="11.1.1.1.0"/>
       <value n="oracle.jdevimpl.xml.wl.WeblogicMigratorHelper" v="11.1.1.1.0"/>
       <value n="oracle.modeler.bmmigrate.management.Migration" v="11.1.1.1.0"/>
       <value n="oracle.toplink.workbench.addin.migration.PersistenceProjectMigrator" v="11.1.1.1.0"/>
       <value n="oracle.toplink.workbench.addin.migration.TopLinkProjectMigrator" v="11.1.1.1.0"/>
    </hash>
    <list n="contentSets">
+      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
       <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
       <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
-      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
-      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
-      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
       <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="cad"/>
-   <hash n="oracle.bm.commonIde.data.project.ModelerProjectSettings">
-      <hash n="modelersContentSet">
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="model/"/>
-         </list>
-      </hash>
-   </hash>
-   <hash n="oracle.ide.model.ResourcePaths">
-      <hash n="resourcesContentSet">
-         <list n="pattern-filters">
-            <string v="+cad.deploy"/>
-            <string v="-**"/>
-         </list>
-         <list n="url-path">
-            <url path="."/>
-         </list>
-      </hash>
-   </hash>
+   <value n="defaultPackage" v="digitalizacion"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
-         <string v="Ant"/>
          <string v="HTML"/>
          <string v="JAVASCRIPT"/>
          <string v="JSP"/>
          <string v="Java"/>
-         <string v="WSDL"/>
-         <string v="WSPolicy"/>
-         <string v="WebServices"/>
          <string v="XML"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
-      <list n="copyRes">
-         <string v=".gif"/>
-         <string v=".properties"/>
-         <string v=".jpg"/>
-         <string v=".jpeg"/>
-         <string v=".xml"/>
-         <string v="-apf.xml"/>
+      <value n="internalEncoding" v="UTF-8"/>
+      <list n="Javac.commandline.optionlist">
+         <string v="-g"/>
+         <string v="-Xlint:all"/>
+         <string v="-Xlint:-cast"/>
+         <string v="-Xlint:-empty"/>
+         <string v="-Xlint:-fallthrough"/>
+         <string v="-Xlint:-path"/>
+         <string v="-Xlint:-processing"/>
+         <string v="-Xlint:-serial"/>
+         <string v="-Xlint:-unchecked"/>
       </list>
-      <value n="internalEncoding" v="Cp1252"/>
+      <value n="webIANAEncoding" v="UTF-8"/>
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
@@ -181,48 +151,8 @@
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="CAD"/>
-      <value n="j2eeWebContextRoot" v="CAD"/>
-      <hash n="webContentSet">
-         <list n="pattern-filters">
-            <string v="-META-INF"/>
-            <string v="-WEB-INF/classes"/>
-            <string v="-WEB-INF/lib"/>
-            <string v="-WEB-INF/src"/>
-            <string v="-pages"/>
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="public_html/"/>
-         </list>
-      </hash>
-   </hash>
-   <hash n="oracle.jdeveloper.model.PathsConfiguration">
-      <hash n="javaContentSet">
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="src/"/>
-         </list>
-      </hash>
-   </hash>
-   <hash n="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings">
-      <hash n="offlineDBContentSet">
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="database/"/>
-         </list>
-      </hash>
-   </hash>
-   <hash n="oracle.jdeveloper.offlinedb.OfflineDBProjectSettings">
-      <hash n="offlineDBContentSet"/>
-   </hash>
-   <hash n="oracle.jdeveloper.runner.RunConfiguration">
-      <value n="clearLogBeforeRun" v="false"/>
-      <url n="targetURL" path="public_html/Login.jsp"/>
+      <value n="j2eeWebAppName" v="cad"/>
+      <value n="j2eeWebContextRoot" v="cad"/>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
@@ -230,163 +160,78 @@
             <value n="custom" v="false"/>
             <value n="javaOptions" v="-Duser.timezone=&quot;-04:00&quot;"/>
             <value n="name" v="Default"/>
-            <url n="targetURL" path="public_html/Login.jsp"/>
+            <url n="targetURL" path="public_html/input.jsp"/>
          </hash>
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
-            <value n="id" v="Additional Classpath"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-dbcp.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-lang.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-pool.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-resources.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-services.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Jxl.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Wsclientedesa.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-      </list>
-      <hash n="internalDefinitions">
-         <list n="jdkDefinitions"/>
-         <list n="libraryDefinitions">
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/antlr.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-beanutils.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-digester.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-fileupload.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-logging.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-validator.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/jakarta-oro.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-collections.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-dbcp.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-lang.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-pool.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-resources.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/commons-services.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/jxl.jar" jar-entry=""/>
-                  <url path="public_html/WEB-INF/lib/struts.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Additional Classpath"/>
-               <value n="id" v="Additional Classpath"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/commons-dbcp.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-dbcp.jar"/>
-               <value n="id" v="Commons-dbcp.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/commons-lang.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-lang.jar"/>
-               <value n="id" v="Commons-lang.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/commons-pool.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-pool.jar"/>
-               <value n="id" v="Commons-pool.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/commons-resources.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-resources.jar"/>
-               <value n="id" v="Commons-resources.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/commons-services.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-services.jar"/>
-               <value n="id" v="Commons-services.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="public_html/WEB-INF/lib/jxl.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Jxl.jar"/>
-               <value n="id" v="Jxl.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../librerias/wsclientedesa.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Wsclientedesa.jar"/>
-               <value n="id" v="Wsclientedesa.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-         </list>
-      </hash>
-      <hash n="jdkReference">
-         <value n="id" v="1.3.1_02"/>
-         <value n="isJDK" v="true"/>
-         <value n="jdkVersion" v="1.3.1_02"/>
-      </hash>
-      <list n="libraryReferences">
-         <hash>
-            <value n="id" v="Additional Classpath"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="JDeveloper Runtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Struts Runtime"/>
+            <value n="id" v="Commons-beanutils.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Servlet Runtime"/>
+            <value n="id" v="Commons-digester.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Oracle SOAP"/>
+            <value n="id" v="Commons-fileupload.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-lang3-3.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-validator.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Google-collections-1.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Gson-2.3.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jakarta-oro.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Joda-time-2.7.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Json-simple-1.1.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jsontoken-1.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jstl-1.2.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junit-4.11.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Sqltaglib.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Struts.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WsClienteUsuario-1.1.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -394,39 +239,446 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Apache Ant"/>
+            <value n="id" v="Commons-codec-1.10.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="JAX-WS Web Services"/>
+            <value n="id" v="Commons-collections4-4.1.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-dbcp.jar"/>
+            <value n="id" v="Commons-logging-1.2.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-lang.jar"/>
+            <value n="id" v="Curvesapi-1.04.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-pool.jar"/>
+            <value n="id" v="Junit-4.12.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-resources.jar"/>
+            <value n="id" v="Log4j-1.2.17.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-services.jar"/>
+            <value n="id" v="Poi-3.15.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Jxl.jar"/>
+            <value n="id" v="Poi-examples-3.15.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Wsclientedesa.jar"/>
+            <value n="id" v="Poi-excelant-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-ooxml-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-ooxml-schemas-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-scratchpad-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Xmlbeans-2.6.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/commons-beanutils.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-beanutils.jar"/>
+               <value n="id" v="Commons-beanutils.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/commons-digester.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-digester.jar"/>
+               <value n="id" v="Commons-digester.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/commons-fileupload.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-fileupload.jar"/>
+               <value n="id" v="Commons-fileupload.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/commons-lang3-3.0.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-lang3-3.0.jar"/>
+               <value n="id" v="Commons-lang3-3.0.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/commons-validator.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-validator.jar"/>
+               <value n="id" v="Commons-validator.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/google-collections-1.0.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Google-collections-1.0.jar"/>
+               <value n="id" v="Google-collections-1.0.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/gson-2.3.1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Gson-2.3.1.jar"/>
+               <value n="id" v="Gson-2.3.1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/jakarta-oro.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Jakarta-oro.jar"/>
+               <value n="id" v="Jakarta-oro.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/joda-time-2.7.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Joda-time-2.7.jar"/>
+               <value n="id" v="Joda-time-2.7.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/json-simple-1.1.1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Json-simple-1.1.1.jar"/>
+               <value n="id" v="Json-simple-1.1.1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/jsontoken-1.1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Jsontoken-1.1.jar"/>
+               <value n="id" v="Jsontoken-1.1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/jstl-1.2.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Jstl-1.2.jar"/>
+               <value n="id" v="Jstl-1.2.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/junit-4.11.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Junit-4.11.jar"/>
+               <value n="id" v="Junit-4.11.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/sqltaglib.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Sqltaglib.jar"/>
+               <value n="id" v="Sqltaglib.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/struts.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Struts.jar"/>
+               <value n="id" v="Struts.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="public_html/WEB-INF/lib/wsClienteUsuario-1.1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="WsClienteUsuario-1.1.jar"/>
+               <value n="id" v="WsClienteUsuario-1.1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/commons-codec-1.10.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-codec-1.10.jar"/>
+               <value n="id" v="Commons-codec-1.10.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/commons-collections4-4.1.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-collections4-4.1.jar"/>
+               <value n="id" v="Commons-collections4-4.1.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/commons-logging-1.2.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-logging-1.2.jar"/>
+               <value n="id" v="Commons-logging-1.2.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/curvesapi-1.04.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Curvesapi-1.04.jar"/>
+               <value n="id" v="Curvesapi-1.04.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/junit-4.12.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Junit-4.12.jar"/>
+               <value n="id" v="Junit-4.12.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/log4j-1.2.17.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Log4j-1.2.17.jar"/>
+               <value n="id" v="Log4j-1.2.17.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/poi-3.15.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Poi-3.15.jar"/>
+               <value n="id" v="Poi-3.15.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/poi-examples-3.15.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Poi-examples-3.15.jar"/>
+               <value n="id" v="Poi-examples-3.15.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/poi-excelant-3.15.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Poi-excelant-3.15.jar"/>
+               <value n="id" v="Poi-excelant-3.15.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/poi-ooxml-3.15.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Poi-ooxml-3.15.jar"/>
+               <value n="id" v="Poi-ooxml-3.15.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/poi-ooxml-schemas-3.15.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Poi-ooxml-schemas-3.15.jar"/>
+               <value n="id" v="Poi-ooxml-schemas-3.15.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/poi-scratchpad-3.15.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Poi-scratchpad-3.15.jar"/>
+               <value n="id" v="Poi-scratchpad-3.15.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../LIBRERIAS/xlsx/xmlbeans-2.6.0.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Xmlbeans-2.6.0.jar"/>
+               <value n="id" v="Xmlbeans-2.6.0.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="JSP Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-beanutils.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-digester.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-fileupload.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-lang3-3.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-validator.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Google-collections-1.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Gson-2.3.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jakarta-oro.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Joda-time-2.7.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Json-simple-1.1.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jsontoken-1.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Jstl-1.2.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junit-4.11.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Sqltaglib.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Struts.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WsClienteUsuario-1.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-codec-1.10.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-collections4-4.1.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-logging-1.2.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Curvesapi-1.04.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junit-4.12.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Log4j-1.2.17.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-examples-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-excelant-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-ooxml-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-ooxml-schemas-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Poi-scratchpad-3.15.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Xmlbeans-2.6.0.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -436,6 +688,16 @@
    </hash>
    <hash n="oracle.jdevimpl.webapp.jsp.libraries.model.ProjectTagLibraries">
       <list n="tag-libraries">
+         <hash>
+            <value n="jspVersion" v="1.1"/>
+            <value n="name" v="Tiles Tag Library"/>
+            <value n="prefix" v="Tiles-Tag-Library"/>
+            <value n="runInEditor" v="false"/>
+            <value n="showInPalette" v="true"/>
+            <value n="tldURL" v="WEB-INF/struts-tiles.tld"/>
+            <value n="URI" v="http://jakarta.apache.org/struts/tags-tiles-1.1"/>
+            <value n="version" v="1.0"/>
+         </hash>
          <hash>
             <value n="jspVersion" v="1.1"/>
             <value n="name" v="template"/>
@@ -448,83 +710,23 @@
          </hash>
          <hash>
             <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Tiles"/>
-            <value n="prefix" v="tiles"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="WEB-INF/struts-tiles.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-tiles"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Nested"/>
+            <value n="name" v="nested"/>
             <value n="prefix" v="nested"/>
             <value n="runInEditor" v="false"/>
             <value n="showInPalette" v="true"/>
             <value n="tldURL" v="WEB-INF/struts-nested.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-nested"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Logic"/>
-            <value n="prefix" v="logic"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="WEB-INF/struts-logic.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-logic"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Bean"/>
-            <value n="prefix" v="bean"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="WEB-INF/struts-bean.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-bean"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="html"/>
-            <value n="prefix" v="html"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="WEB-INF/struts-html.tld"/>
-            <value n="URI" v="http://jakarta.apache.org/struts/tags-html-1.0"/>
+            <value n="URI" v="http://jakarta.apache.org/struts/tags-nested-1.0"/>
             <value n="version" v="1.0"/>
          </hash>
          <hash>
             <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Bean (Backwards Compatibility)"/>
-            <value n="prefix" v="bean"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="false"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-bean-1.1.tld"/>
-            <value n="URI" v="http://jakarta.apache.org/struts/tags-bean"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Bean"/>
-            <value n="prefix" v="bean"/>
+            <value n="name" v="logic"/>
+            <value n="prefix" v="logic"/>
             <value n="runInEditor" v="false"/>
             <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-bean.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-bean"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts HTML (Backwards Compatibility)"/>
-            <value n="prefix" v="html"/>
-            <value n="runInEditor" v="true"/>
-            <value n="showInPalette" v="false"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-html-1.1.tld"/>
-            <value n="URI" v="http://jakarta.apache.org/struts/tags-html"/>
-            <value n="version" v="1.2"/>
+            <value n="tldURL" v="WEB-INF/struts-logic.tld"/>
+            <value n="URI" v="http://jakarta.apache.org/struts/tags-logic-1.0"/>
+            <value n="version" v="1.0"/>
          </hash>
          <hash>
             <value n="jspVersion" v="1.1"/>
@@ -532,73 +734,107 @@
             <value n="prefix" v="html"/>
             <value n="runInEditor" v="true"/>
             <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-html.tld"/>
+            <value n="tldURL" v="WEB-INF/struts-html.tld"/>
             <value n="URI" v="http://struts.apache.org/tags-html"/>
             <value n="version" v="1.2"/>
          </hash>
          <hash>
             <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Logic (Backwards Compatibility)"/>
-            <value n="prefix" v="logic"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="false"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-logic-1.1.tld"/>
-            <value n="URI" v="http://jakarta.apache.org/struts/tags-logic"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Logic"/>
-            <value n="prefix" v="logic"/>
+            <value n="name" v="bean"/>
+            <value n="prefix" v="bean"/>
             <value n="runInEditor" v="false"/>
             <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-logic.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-logic"/>
-            <value n="version" v="1.2"/>
+            <value n="tldURL" v="WEB-INF/struts-bean.tld"/>
+            <value n="URI" v="http://jakarta.apache.org/struts/tags-bean-1.0"/>
+            <value n="version" v="1.0"/>
          </hash>
          <hash>
             <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Nested (Backwards Compatibility)"/>
-            <value n="prefix" v="nested"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="false"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-nested-1.1.tld"/>
-            <value n="URI" v="http://jakarta.apache.org/struts/tags-nested"/>
-            <value n="version" v="1.2"/>
-         </hash>
-         <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Nested"/>
-            <value n="prefix" v="nested"/>
+            <value n="name" v="database"/>
+            <value n="prefix" v="database"/>
             <value n="runInEditor" v="false"/>
             <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-nested.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-nested"/>
+            <value n="tldURL" v="WEB-INF/sqltaglib.tld"/>
+            <value n="URI" v="/WEB-INF/sqltaglib.tld"/>
+            <value n="version" v="1.0"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL Core"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL Core"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/c.tld"/>
+            <value n="URI" v="http://java.sun.com/jsp/jstl/core"/>
             <value n="version" v="1.2"/>
          </hash>
          <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Tiles (Backwards Compatibility)"/>
-            <value n="prefix" v="tiles"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="false"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-tiles-1.1.tld"/>
-            <value n="URI" v="http://jakarta.apache.org/struts/tags-tiles"/>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL Format"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL Format"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/fmt.tld"/>
+            <value n="URI" v="http://java.sun.com/jsp/jstl/fmt"/>
             <value n="version" v="1.2"/>
          </hash>
          <hash>
-            <value n="jspVersion" v="1.1"/>
-            <value n="name" v="Struts Tiles"/>
-            <value n="prefix" v="tiles"/>
-            <value n="runInEditor" v="false"/>
-            <value n="showInPalette" v="true"/>
-            <value n="tldURL" v="@project@public_html/WEB-INF/lib/struts.jar!/META-INF/tlds/struts-tiles.tld"/>
-            <value n="URI" v="http://struts.apache.org/tags-tiles"/>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL SQL"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL SQL"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/sql.tld"/>
+            <value n="URI" v="http://java.sun.com/jsp/jstl/sql"/>
+            <value n="version" v="1.2"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL XML"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL XML"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/x.tld"/>
+            <value n="URI" v="http://java.sun.com/jsp/jstl/xml"/>
+            <value n="version" v="1.2"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL Functions"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL Functions"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/fn.tld"/>
+            <value n="URI" v="http://java.sun.com/jsp/jstl/functions"/>
+            <value n="version" v="1.2"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL Permitted Taglibs"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL Permitted Taglibs"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/permittedTaglibs.tld"/>
+            <value n="URI" v="http://jakarta.apache.org/taglibs/standard/permittedTaglibs"/>
+            <value n="version" v="1.2"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="JSTL Script Free"/>
+               <value n="version" v="1.2"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="JSTL Script Free"/>
+            <value n="tldURL" v="@oracle.home@../modules/glassfish.jstl_1.2.0.1.jar!/META-INF/scriptfree.tld"/>
+            <value n="URI" v="http://jakarta.apache.org/taglibs/standard/scriptfree"/>
             <value n="version" v="1.2"/>
          </hash>
       </list>
    </hash>
-   <list n="recentlyUsedPackages">
-      <string v="cad"/>
-   </list>
 </jpr:project>
