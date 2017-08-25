@@ -1,5 +1,7 @@
 package anb.action;
 
+import anb.general.conexion_cad;
+import anb.bean.textoForm;
 import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -23,7 +25,7 @@ public class textoAction extends Action
         throws ServletException, IOException
     {
         textoForm gform = (textoForm)request.getAttribute("textoForm");
-        conexion dc = new conexion();
+        conexion_cad dc = new conexion_cad();
         Connection con = null;
         CallableStatement call = null;
         try

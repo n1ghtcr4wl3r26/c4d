@@ -1,4 +1,8 @@
 package anb.action;
+
+
+import anb.general.conexion_cad;
+import anb.bean.consultaForm;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -25,7 +29,7 @@ public class consultaAction extends Action
   {
     consultaForm vform = (consultaForm)request.getAttribute("consultaForm");
     
-      conexion dc = new conexion();
+      conexion_cad dc = new conexion_cad();
       Connection con = null;
       CallableStatement call = null;
         CallableStatement call2 = null;

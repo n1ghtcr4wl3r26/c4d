@@ -6,6 +6,8 @@
     <form-beans>
         <form-bean name="AdminForm" type="anb.bean.AdminForm"/>
         <form-bean name="inputActionForm" type="anb.bean.inputActionForm"/>
+        <form-bean name="beanInput" type="anb.general.InputForm"/>
+        <form-bean name="beanCambioForm" type="anb.general.CambioForm"/>        
         <form-bean name="beanMenu" type="anb.bean.MenuForm"/>
         <form-bean name="PasswordForm" type="anb.bean.PasswordForm"/>
         <form-bean name="textoForm" type="anb.bean.textoForm"/>

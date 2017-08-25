@@ -1,7 +1,8 @@
 package anb.action;
 
 import anb.bean.discarForm;
-
+import anb.general.Util;
+import anb.general.conexion_cad;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 
@@ -10,6 +11,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import java.io.IOException;
+
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +33,7 @@ public class discarAction extends Action
 
         if(vform.getBoton().equals("Verificar Disponibilidad"))
         {
-            conexion dc = new conexion();
+            conexion_cad dc = new conexion_cad();
             Connection con = null;
             CallableStatement call = null;
             String estado;

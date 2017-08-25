@@ -1,4 +1,7 @@
 package anb.action;
+
+import anb.general.conexion_cad;
+import anb.bean.carpetaForm;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -32,7 +35,7 @@ public class carpetaAction extends Action
   public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
   {
         carpetaForm vform = (carpetaForm)request.getAttribute("carpetaForm");
-        conexion dc = new conexion();
+        conexion_cad dc = new conexion_cad();
         Connection con = null;
         CallableStatement call = null;
         CallableStatement call2 = null;

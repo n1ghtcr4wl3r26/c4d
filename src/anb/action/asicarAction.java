@@ -1,5 +1,8 @@
 package anb.action;
 
+import anb.general.conexion_cad;
+import anb.bean.asicarForm;
+import anb.general.Util;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -71,7 +74,7 @@ public class asicarAction extends Action
                     }
                     else
                     {
-                        conexion dc = new conexion();
+                        conexion_cad dc = new conexion_cad();
                         Connection con = null;
                         CallableStatement call = null;
                         String rs = "";

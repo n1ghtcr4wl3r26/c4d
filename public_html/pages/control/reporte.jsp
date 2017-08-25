@@ -1,6 +1,6 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ page contentType="text/html;charset=iso-8859-1"%>
-<%@ page import="java.sql.*, cad.*, java.text.*,  java.util.*" %>
+<%@ page import="java.sql.*, anb.bean.*, java.text.*,  java.util.*, anb.general.*" %>
 
 <html>
 <head>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-    conexion dc = new conexion();
+    conexion_cad dc = new conexion_cad();
     Connection con = null;
     CallableStatement call = null;
     ResultSet l_rset = null;

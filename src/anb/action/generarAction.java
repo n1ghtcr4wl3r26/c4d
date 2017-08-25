@@ -1,5 +1,7 @@
 package anb.action;
 
+import anb.general.conexion_cad;
+import anb.bean.generarForm;
 import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -23,7 +25,7 @@ public class generarAction extends Action
         throws ServletException, IOException
     {
         generarForm gform = (generarForm)request.getAttribute("generarForm");
-        conexion dc = new conexion();
+        conexion_cad dc = new conexion_cad();
         Connection con = null;
         CallableStatement call = null;
         

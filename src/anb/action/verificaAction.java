@@ -1,5 +1,8 @@
 package anb.action;
 
+
+import anb.general.conexion_cad;
+import anb.bean.verificaForm;
 import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -25,7 +28,7 @@ public class verificaAction extends Action
         throws ServletException, IOException
     {
         verificaForm vform = (verificaForm)request.getAttribute("verificaForm");
-        conexion dc = new conexion();
+        conexion_cad dc = new conexion_cad();
         Connection con = null;
         CallableStatement call = null;
         try
