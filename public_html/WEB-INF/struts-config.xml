@@ -7,7 +7,7 @@
         <form-bean name="AdminForm" type="anb.bean.AdminForm"/>
         <form-bean name="inputActionForm" type="anb.bean.inputActionForm"/>
         <form-bean name="beanInput" type="anb.general.InputForm"/>
-        <form-bean name="beanCambioForm" type="anb.general.CambioForm"/>        
+        <form-bean name="beanCambioForm" type="anb.general.CambioForm"/>
         <form-bean name="beanMenu" type="anb.general.MenuForm"/>
         <form-bean name="PasswordForm" type="anb.bean.PasswordForm"/>
         <form-bean name="textoForm" type="anb.bean.textoForm"/>
@@ -21,28 +21,20 @@
         <form-bean name="connitForm" type="anb.bean.connitForm"/>
         <form-bean name="condisForm" type="anb.bean.condisForm"/>
     </form-beans>
-    <global-forwards>
-        <forward name="password" path="pagina.password"/>
-        <forward name="logout" path="/Login.jsp"/>
-        <forward name="parametros" path="pagina.parametros"/>
-        <forward name="reporte" path="pagina.reporte"/>
-        <forward name="verifica" path="pagina.verifica"/>
-        <forward name="texto" path="pagina.texto"/>
-        <forward name="carpetas" path="pagina.carpetas"/>
-        <forward name="consulta" path="pagina.consulta"/>
-        <forward name="asicar" path="pagina.asicar"/>
-        <forward name="discar" path="pagina.discar"/>
-        <forward name="connit" path="pagina.connit"/>
-        <forward name="condis" path="pagina.condis"/>
-        <forward name="inicial" path="pagina.inicial"/>
-    </global-forwards>
+    <global-forwards></global-forwards>
     <action-mappings>
         <action path="/MenuAction" type="anb.general.MenuAction" name="beanMenu" scope="request">
             <forward name="log" path="/log.do" redirect="true"/>
             <forward name="usuario" path="demo.user.mod"/>
             <forward name="account" path="/account.do" redirect="true"/>
             <forward name="password" path="/passwordidx.do" redirect="true"/>
+            <forward name="parametros" path="pagina.parametros"/>
+            <forward name="reporte" path="pagina.reporte"/>
         </action>
+        <!-- CAD    -->
+        <action path="/parametros" type="anb.action.ParametrosAction" name="ParametrosForm" scope="request">
+            <forward name="ok" path="pagina.parametros"/>
+        </action>        
         <action path="/logout" type="anb.general.LogoutAction" scope="request">
             <forward name="login" path="/input.jsp" redirect="true"/>
         </action>
@@ -72,18 +64,7 @@
             <forward name="ok" path="admin.password" redirect="true"/>
             <forward name="nook" path="/input.jsp"/>
         </action>
-        <!-- CAD    -->
-        <action path="/texto" type="cad.textoAction" name="textoForm" scope="request"/>
-        <action path="/generar" type="cad.generarAction" name="generarForm" scope="request"/>
-        <action path="/reporte" type="cad.reporteAction" name="reporteForm" scope="request"/>
-        <action path="/verifica" type="cad.verificaAction" name="verificaForm" scope="request"/>
-        <action path="/parametros" type="cad.ParametrosAction" name="ParametrosForm" scope="request"/>
-        <action path="/consulta" type="cad.consultaAction" name="consultaForm" scope="request"/>
-        <action path="/carpeta" type="cad.carpetaAction" name="carpetaForm" scope="request"/>
-        <action path="/asicar" type="cad.asicarAction" name="asicarForm" scope="request"/>
-        <action path="/discar" type="cad.discarAction" name="discarForm" scope="request"/>
-        <action path="/connit" type="cad.connitAction" name="connitForm" scope="request"/>
-        <action path="/condis" type="cad.condisAction" name="condisForm" scope="request"/>
+        
     </action-mappings>
     <controller nocache="true" processorClass="anb.general.AnbRequestProcessor"/>
     <message-resources parameter="anb.general.config"/>

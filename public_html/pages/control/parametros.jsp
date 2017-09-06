@@ -1,38 +1,41 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ page contentType="text/html;charset=iso-8859-1"%>
-<%@ page import="java.sql.*, anb.bean.*, java.text.*,  java.util.*" %>
-
-<html>
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-   <title>Archivo de Texto</title>
- <script language="JavaScript" type="text/JavaScript" src="jscript/consulta.js" ></script>
-</head>
-<body>
-<div>
-<html:form action="/parametros">
-<table width="500px" align="center" class="soloborde" bgcolor="#C1C1FF">
-<tr><td class="FondoVerde" align="center"><b>PARÁMETROS DE NÚMERO DE CARPETAS</b></td></tr>
-<tr> <td class="S10d" align="right" colspan=2></td></tr>
-<tr><td> <hr> </td></tr>
-<tr><td class="parath">Número de Carpeta a Generar : <html:text property="maximo" onblur="this.value=trimm(this.value);" /></td></tr>
-<tr><td> <hr> </td></tr>
-<tr><td align="center"><html:submit property="boton" value="Grabar"  styleClass="boton1"  onclick="return fEvaluaparam()" /></td></tr>
-<%
-ParametrosForm pform = (ParametrosForm) request.getAttribute("ParametrosForm");
-try
-{
-%>
-<tr><td><%=pform.getMensaje().toString()%></td></tr>
-<%
-}
-catch (Exception e)
-    { System.out.println(e.toString()); 
-    %><%--<table><tr><td class="T8r"><b>Error:</b> <%=e.toString()%></td></tr></table>--%>
-<%  }
-%>
-</table>
-</html:form>
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <strong>ParÃ¡metros de NÃºmeros de Carpetas</strong>
+        </h4>
+    </div>
+    <br/>
+    <div class="modal-body form-horizontal">
+        <html:form action="/parametros">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">N&uacute;mero de Carpeta a Generar:</label>
+                <div class="col-sm-3">
+                    <html:text property="maximo" styleId="maximo" maxlength="30" styleClass="form-control required numeric" size="30"/>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="submit" name="boton" id="boton" class="btn btn-primary" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consultar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>            
+            </div>
+            <div class="form-group">
+                <label class="label-message-required">
+                    * Campos Obligatorios
+                </label>
+            </div>
+        </html:form>
+    </div>
 </div>
-</body>
-</html>
+<script>
+    $(document).ready(function () {
+        Anb.form.submit('#form-parametros', function (form) {
+            Anb.form.cleanErrors(form);
+            if (Anb.validate.run(form)) {
+                Anb.loading.show()                
+                form.submit();
+            }
+        });       
+        $("#boton").removeAttr("disabled");
+    });
+</script>

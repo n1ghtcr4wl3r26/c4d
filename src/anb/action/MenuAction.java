@@ -1,7 +1,9 @@
 package anb.action;
 
-import anb.bean.MenuForm;
+
 import anb.bean.inputActionForm;
+
+import anb.general.MenuForm;
 
 import java.io.IOException;
 
@@ -13,6 +15,7 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+
 
 // Referenced classes of package cad:
 //            MenuForm, LoginForm
