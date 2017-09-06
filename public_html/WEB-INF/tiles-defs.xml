@@ -19,53 +19,246 @@
         <put name="content" value="/pages/layout/Blank.jsp"/>
         <put name="footer" value="/pages/layout/Footer.jsp"/>
     </definition>
-    <definition name="pagina.inicial" extends="aud.home">
-        <put name="content" value="/pages/control/panel.jsp"/>
+    <!-- CARPETAS -->
+    <definition name="estado.carpetas" extend="aud.home">
+        <put name="content" value="/pages/carpetas/estado_carpetas.jsp"/>
     </definition>
-    <!-- Pagina para subir la información recibida -->
-    <definition name="pagina.registro" extends="aud.home">
-        <put name="content" value="/pages/control/Registro.jsp"/>
+    <definition name="generarnumeros" extend="aud.home">
+        <put name="content" value="/pages/carpetas/generar_numeros.jsp"/>
     </definition>
-    <!-- Pagina para cambiar la contraseña -->
-    <definition name="pagina.password" extends="aud.home">
-        <put name="content" value="/pages/control/Password.jsp"/>
+    
+    <!-- CONTROL -->
+    <definition name="memorizacion.control" extends="aud.home">
+        <put name="content" value="/pages/control/memorizar_control.jsp"/>
+    </definition> 
+    <definition name="memorizacion.control.ok" extends="aud.home">
+        <put name="content" value="/pages/control/memorizar_control_ok.jsp"/>
+    </definition> 
+    <definition name="memorizacion.diferido.index" extends="aud.home">
+        <put name="content" value="/pages/control/memorizar_diferido_index.jsp"/>
+    </definition> 
+    <definition name="memorizacion.diferido" extends="aud.home">
+        <put name="content" value="/pages/control/memorizar_diferido.jsp"/>
+    </definition> 
+    <definition name="alcance.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/alcance_control_index.jsp"/>
     </definition>
-    <!-- Pagina para parametros -->
-    <definition name="pagina.parametros" extends="aud.home">
-        <put name="content" value="/pages/control/parametros.jsp"/>
+    <definition name="alcance.control" extends="aud.home">
+        <put name="content" value="/pages/control/alcance_control.jsp"/>
     </definition>
-    <!-- Pagina para reporte -->
-    <definition name="pagina.reporte" extends="aud.home">
-        <put name="content" value="/pages/control/reporte.jsp"/>
+    <definition name="alcance.tramite" extends="aud.home">
+        <put name="content" value="/pages/control/alcance_controltramite.jsp"/>
     </definition>
-    <!-- Pagina para verificar -->
-    <definition name="pagina.verifica" extends="aud.home">
-        <put name="content" value="/pages/control/verifica.jsp"/>
+    <definition name="alcance.ampliatoria" extends="aud.home">
+        <put name="content" value="/pages/control/alcance_ampliatoria.jsp"/>
     </definition>
-    <!-- Pagina para texto -->
-    <definition name="pagina.texto" extends="aud.home">
-        <put name="content" value="/pages/control/texto.jsp"/>
+    <definition name="registro.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/registro_control_index.jsp"/>
     </definition>
-    <!-- Pagina para gestion de carpetas -->
-    <definition name="pagina.carpetas" extends="aud.home">
-        <put name="content" value="/pages/control/carpetas.jsp"/>
+    <definition name="registro.control" extends="aud.home">
+        <put name="content" value="/pages/control/registro_control.jsp"/>
     </definition>
-    <definition name="pagina.asicar" extends="aud.home">
-        <put name="content" value="/pages/control/asicar.jsp"/>
+    <definition name="asigna.fiscalizador.index" extends="aud.home">
+        <put name="content" value="/pages/control/asigna_fiscalizador_index.jsp"/>
     </definition>
-    <definition name="pagina.discar" extends="aud.home">
-        <put name="content" value="/pages/control/discar.jsp"/>
+    <definition name="asigna.fiscalizador" extends="aud.home">
+        <put name="content" value="/pages/control/asigna_fiscalizador.jsp"/>
     </definition>
-    <definition name="pagina.connit" extends="aud.home">
-        <put name="content" value="/pages/control/connit.jsp"/>
+    <definition name="reasigna.fiscalizador.index" extends="aud.home">
+        <put name="content" value="/pages/control/reasigna_fiscalizador_index.jsp"/>
     </definition>
-    <definition name="pagina.condis" extends="aud.home">
-        <put name="content" value="/pages/control/condis.jsp"/>
+    <definition name="reasigna.fiscalizador" extends="aud.home">
+        <put name="content" value="/pages/control/reasigna_fiscalizador.jsp"/>
     </definition>
-    <!-- Pagina para consultas -->
-    <definition name="pagina.consulta" extends="aud.home">
-        <put name="content" value="/pages/control/consulta.jsp"/>
+    <definition name="ampliacion.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/ampliacion_control_index.jsp"/>
+    </definition> 
+    <definition name="ampliacion.control" extends="aud.home">
+        <put name="content" value="/pages/control/ampliacion_control.jsp"/>
+    </definition>   
+    <definition name="ampliacion.tramite" extends="aud.home">
+        <put name="content" value="/pages/control/ampliacion_controltramite.jsp"/>
     </definition>
+    <definition name="notificacion.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/notificacion_control_index.jsp"/>
+    </definition>
+    <definition name="notificacion.control" extends="aud.home">
+        <put name="content" value="/pages/control/notificacion_control.jsp"/>
+    </definition>
+    <definition name="generacion.hoja.index" extends="aud.home">
+        <put name="content" value="/pages/control/generacion_hoja_index.jsp"/>
+    </definition>
+    <definition name="generacion.hoja" extends="aud.home">
+        <put name="content" value="/pages/control/generacion_hoja.jsp"/>
+    </definition>
+    <definition name="generacion.hoja.tramite" extends="aud.home">
+        <put name="content" value="/pages/control/generacion_hoja_tramite.jsp"/>
+    </definition>
+    <definition name="subir.hoja.index" extends="aud.home">
+        <put name="content" value="/pages/control/subir_hoja_index.jsp"/>
+    </definition>
+    <definition name="subir.hoja" extends="aud.home">
+        <put name="content" value="/pages/control/subir_hoja.jsp"/>
+    </definition>
+    <definition name="generacion.excel.index" extends="aud.home">
+        <put name="content" value="/pages/control/generacion_excel_index.jsp"/>
+    </definition>
+    <definition name="generacion.excel" extends="aud.home">
+        <put name="content" value="/pages/control/generacion_excel.jsp"/>
+    </definition>
+    <definition name="conclusion.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/conclusion_control_index.jsp"/>
+    </definition>
+    <definition name="conclusion.control" extends="aud.home">
+        <put name="content" value="/pages/control/conclusion_control.jsp"/>
+    </definition>
+    <definition name="notificacion.conclusion.index" extends="aud.home">
+        <put name="content" value="/pages/control/notificacion_conclusion_index.jsp"/>
+    </definition>
+    <definition name="notificacion.conclusion" extends="aud.home">
+        <put name="content" value="/pages/control/notificacion_conclusion.jsp"/>
+    </definition>
+    
+    <definition name="anulacion.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/anulacion_control_idx.jsp"/>
+    </definition>
+    <definition name="anulacion.control" extends="aud.home">
+        <put name="content" value="/pages/control/anulacion_control.jsp"/>
+    </definition>
+    
+    <definition name="registro.recibos.index" extends="aud.home">
+        <put name="content" value="/pages/control/registro_recibos_index.jsp"/>
+    </definition>
+    <definition name="registro.recibos" extends="aud.home">
+        <put name="content" value="/pages/control/registro_recibos.jsp"/>
+    </definition>
+    
+    <!-- ADMIN -->
+    <definition name="admin.account" extends="aud.home">
+        <put name="content" value="/pages/control/admin_account.jsp"/>
+    </definition>
+    <definition name="admin.password" extends="aud.home">
+        <put name="content" value="/pages/control/admin_password.jsp"/>
+    </definition>
+    
+    
+    <!-- REPORTES -->
+    <definition name="cuadro.liquidacion.index" extends="aud.home">
+        <put name="content" value="/pages/control/cuadro_liquidacion_index.jsp"/>
+    </definition>
+    <definition name="cuadro.liquidacion" extends="aud.home">
+        <put name="content" value="/pages/control/cuadro_liquidacion.jsp"/>
+    </definition>    
+    <definition name="tributos.omitidos.index" extends="aud.home">
+        <put name="content" value="/pages/control/tributos_omitidos_index.jsp"/>
+    </definition>
+    <definition name="tributos.omitidos" extends="aud.home">
+        <put name="content" value="/pages/control/tributos_omitidos.jsp"/>
+    </definition>
+    
+    <definition name="reporte.orden.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_orden_index.jsp"/>
+    </definition>
+    <definition name="reporte.notificacion.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_notificacion_index.jsp"/>
+    </definition>
+    <definition name="reporte.alcance.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_alcance_index.jsp"/>
+    </definition>
+    <definition name="reporte.ampliacion.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_ampliacion_index.jsp"/>
+    </definition>    
+    <definition name="reporte.control.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_control_index.jsp"/>
+    </definition>
+    <definition name="reporte.control" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_control.jsp"/>
+    </definition>    
+    
+    <!-- REPORTES 2DA PARTE-->
+    
+    <definition name="reporte.control.asig.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_controlasig_index.jsp"/>
+    </definition>
+    <definition name="reporte.control.asig" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_controlasig.jsp"/>
+    </definition>   
+    <definition name="reporte.control.gen.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_controlgen_index.jsp"/>
+    </definition>
+    <definition name="reporte.control.gen" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_controlgen.jsp"/>
+    </definition>
+    <definition name="reporte.detalle.control.sup.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_detallecontrolsup_index.jsp"/>
+    </definition>
+    <definition name="reporte.detalle.control.sup" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_detallecontrolsup.jsp"/>
+    </definition>  
+    <definition name="reporte.detalle.control.fis.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_detallecontrolfis_index.jsp"/>
+    </definition>
+    <definition name="reporte.detalle.control.fis" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_detallecontrolfis.jsp"/>
+    </definition>   
+    <definition name="reporte.cuadro.liquidacion.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_cuadroliquidacion_index.jsp"/>
+    </definition>
+    <definition name="reporte.cuadro.liquidacion" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_cuadroliquidacion.jsp"/>
+    </definition>   
+    <definition name="reporte.liquidacion.previa.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_liquidacionprevia_index.jsp"/>
+    </definition>
+    <definition name="reporte.liquidacion.previa" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_liquidacionprevia.jsp"/>
+    </definition>   
+    
+    <definition name="demo.user.mod" extends="aud.home">
+        <put name="content" value="/pages/general/UsuarioCambio.jsp"/>
+    </definition>
+    <definition name="demo.log" extends="aud.home">
+        <put name="content" value="/pages/general/log.jsp"/>
+    </definition>
+    
+    <!-- REPORTES 3RA PARTE -->
+    <definition name="reporte.seguimiento.orden.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_seguimiento_orden_index.jsp"/>
+    </definition>
+    <definition name="reporte.seguimiento.orden" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_seguimiento_orden.jsp"/>
+    </definition>   
+    <definition name="reporte.seguimiento.dui.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_seguimiento_dui_index.jsp"/>
+    </definition>
+    <definition name="reporte.seguimiento.dui" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_seguimiento_dui.jsp"/>
+    </definition> 
+    <definition name="reporte.seguimiento.item.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_seguimiento_item_index.jsp"/>
+    </definition>
+    <definition name="reporte.seguimiento.item" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_seguimiento_item.jsp"/>
+    </definition> 
+    <definition name="reporte.liquidacion.dui.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_liquidacion_dui_index.jsp"/>
+    </definition>
+    <definition name="reporte.liquidacion.dui" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_liquidacion_dui.jsp"/>
+    </definition> 
+    <definition name="reporte.liquidacion.item.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_liquidacion_item_index.jsp"/>
+    </definition>
+    <definition name="reporte.liquidacion.item" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_liquidacion_item.jsp"/>
+    </definition> 
+    <definition name="reporte.recuperacion.dui.index" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_recuperacion_dui_index.jsp"/>
+    </definition>
+    <definition name="reporte.recuperacion.dui" extends="aud.home">
+        <put name="content" value="/pages/control/reporte_recuperacion_dui.jsp"/>
+    </definition> 
+    
 </tiles-definitions>
 
 

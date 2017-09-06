@@ -1,0 +1,31 @@
+ <action path="/parametros" type="anb.action.ParametrosAction" name="ParametrosForm" scope="request">
+            <forward name="ok" path="pagina.parametros"/>
+        </action>   
+
+     
+        <action path="/logout" type="anb.general.LogoutAction" scope="request">
+            <forward name="login" path="/input.jsp" redirect="true"/>
+        </action>
+        <action path="/log" type="anb.general.LogAction" scope="request">
+            <forward name="log" path="demo.log"/>
+        </action>
+        <action path="/CambioAction" type="anb.general.CambioAction" name="beanCambioForm" scope="request"
+                input="aud.user.mod">
+            <forward name="usuario" path="aud.home"/>
+            <forward name="cambio" path="demo.user.mod"/>
+        </action>
+       
+        <!-- ADMIN -->
+        <action path="/account" type="anb.action.AdminAction" name="AdminForm" parameter="account" scope="request">
+            <forward name="ok" path="admin.account" redirect="true"/>
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/passwordidx" type="anb.action.AdminAction" name="AdminForm" parameter="passwordidx"
+                scope="request">
+            <forward name="ok" path="admin.password" redirect="true"/>
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/password" type="anb.action.AdminAction" name="AdminForm" parameter="password" scope="request">
+            <forward name="ok" path="admin.password" redirect="true"/>
+            <forward name="nook" path="/input.jsp"/>
+        </action>
