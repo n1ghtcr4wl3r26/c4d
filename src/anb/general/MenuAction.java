@@ -30,11 +30,15 @@ public class MenuAction extends Action {
 
         switch (bMenu.getOpcion()) {
 	case 1: 
-            return mapping.findForward("reporte");
+            return mapping.findForward("estadocarpeta");
 
         case 3: 
+            //return mapping.findForward("asigna");
             return mapping.findForward("generar");
 		
+        case 6: 
+                return mapping.findForward("verifica");
+        
         case 101:
             return mapping.findForward("memorizaciondiferido");
 

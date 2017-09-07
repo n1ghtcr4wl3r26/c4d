@@ -1,7 +1,7 @@
 package anb.action;
 
 
-import anb.bean.GenerarNumerosForm;
+import anb.bean.VerificaNumeroForm;
 
 import anb.general.ConexionCad;
 
@@ -20,13 +20,13 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
 
-public class GenerarNumerosAction extends MappingDispatchAction {
+public class VerificaNumeroAction extends MappingDispatchAction {
     private final GeneralNeg gen = new GeneralNeg();
 
-    public ActionForward generaridx(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+    public ActionForward verificaidx(ActionMapping mapping, ActionForm form, HttpServletRequest request,
                                     HttpServletResponse response) throws Exception {
-        GenerarNumerosForm bean = new GenerarNumerosForm();
-        bean = (GenerarNumerosForm)request.getAttribute("GenerarNumerosForm");
+        VerificaNumeroForm bean = new VerificaNumeroForm();
+        bean = (VerificaNumeroForm)request.getAttribute("VerificaNumeroForm");
         String link = "index";
 
         String usuario = (String)request.getSession().getAttribute("user");

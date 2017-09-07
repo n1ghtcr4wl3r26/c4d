@@ -8,14 +8,14 @@
     <form-beans>
         <form-bean name="EstadoCarpetasForm" type="anb.bean.EstadoCarpetasForm"/>
         <form-bean name="GenerarNumerosForm" type="anb.bean.GenerarNumerosForm"/>
-        
+        <form-bean name="AsignaFiscalizadorForm" type="anb.bean.AsignaFiscalizadorForm"/>
+        <form-bean name="VerificaNumeroForm" type="anb.bean.VerificaNumeroForm"/>
         <form-bean name="beanInput" type="anb.general.InputForm"/>
         <form-bean name="beanCambioForm" type="anb.general.CambioForm"/>
         <form-bean name="beanMenu" type="anb.general.MenuForm"/>
         <form-bean name="MemorizacionControlForm" type="anb.bean.MemorizacionControlForm"/>
         <form-bean name="AlcanceForm" type="anb.bean.AlcanceForm"/>
-        <form-bean name="RegistroControlForm" type="anb.bean.RegistroControlForm"/>
-        <form-bean name="AsignaFiscalizadorForm" type="anb.bean.AsignaFiscalizadorForm"/>
+        <form-bean name="RegistroControlForm" type="anb.bean.RegistroControlForm"/>        
         <form-bean name="AmpliacionForm" type="anb.bean.AmpliacionForm"/>
         <form-bean name="NotificacionControlForm" type="anb.bean.NotificacionControlForm"/>
         <form-bean name="GeneracionHojaForm" type="anb.bean.GeneracionHojaForm"/>
@@ -33,19 +33,19 @@
         <form-bean name="RegistroRecibosForm" type="anb.bean.RegistroRecibosForm"/>        
     </form-beans>
     <global-forwards>
-        
     </global-forwards>
     <action-mappings>
         <action path="/MenuAction" type="anb.general.MenuAction" name="beanMenu" scope="request">
-            <forward name="generar" path="generarnumeros" redirect="true" />
-        
+            <forward name="estadocarpeta" path="/estadoidx.do" redirect="true" />
+            <forward name="generar" path="/generaridx.do" redirect="true" />
+            <forward name="verifica" path="/verificaidx.do" redirect="true" />
+            <forward name="asigna" path="/asignaidx.do" redirect="true" />            
             <forward name="log" path="/log.do" redirect="true" />
             <forward name="usuario" path="demo.user.mod" />
             <forward name="memorizacion" path="/memorizacion.do" redirect="true" />
             <forward name="memorizaciondiferido" path="/memorizaciondiferidoidx.do" redirect="true" />
             <forward name="alcance" path="/alcindex.do" redirect="true" />
             <forward name="registro" path="/registroidx.do" redirect="true" />
-            <forward name="asigna" path="/asignaidx.do" redirect="true" />
             <forward name="ampliacion" path="/ampindex.do" redirect="true" />
             <forward name="notificacioncontrol" path="/notificacioncontrolidx.do" redirect="true" />
             <forward name="generacionhoja" path="/generacionhojaidx.do" redirect="true" />
@@ -79,8 +79,33 @@
             <forward name="recuperacion.dui" path="/reporte_recuperacion_duiidx.do" redirect="true" />            
         </action>
         
-        <action path="/generarnumeros" type="anb.action.GenerarNumerosAction" name="GenerarNumerosForm" scope="request">
-            <forward name="ok" path="generar.numeros" redirect="true"/>
+        <!-- CARPETAS -->
+        <action path="/generaridx" type="anb.action.GenerarNumerosAction" name="GenerarNumerosForm" parameter="generaridx" scope="request">
+            <forward name="index" path="generar.numeros.index" redirect="true" />
+            <forward name="ok" path="generar.numeros.index" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/estadoidx" type="anb.action.EstadoCarpetaAction" name="EstadoCarpetaForm" parameter="estadoidx" scope="request">
+            <forward name="index" path="estado.carpetas.index" redirect="true" />
+            <forward name="ok" path="estado.carpetas.index" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/verificaidx" type="anb.action.VerificaNumeroAction" name="VerificaNumeroForm" parameter="verificaidx" scope="request">
+            <forward name="index" path="verifica.numero.index" redirect="true" />
+            <forward name="ok" path="verifica.numero.index" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        
+        <!-- ASIGNA FISCALIZADOR -->
+        <action path="/asignaidx" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="asignaidx" scope="request">
+            <forward name="index" path="asigna.fiscalizador.index" redirect="true" />
+            <forward name="ok" path="asigna.fiscalizador" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/asigna" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="asigna" scope="request">
+            <forward name="index" path="asigna.fiscalizador.index" redirect="true" />
+            <forward name="ok" path="asigna.fiscalizador" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
         </action>
         
         <action path="/logout" type="anb.general.LogoutAction" scope="request">
@@ -226,17 +251,7 @@
             <forward name="nook" path="/input.jsp"/>
         </action>
         
-        <!-- ASIGNA FISCALIZADOR -->
-        <action path="/asignaidx" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="asignaidx" scope="request">
-            <forward name="index" path="asigna.fiscalizador.index" redirect="true" />
-            <forward name="ok" path="asigna.fiscalizador" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/asigna" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="asigna" scope="request">
-            <forward name="index" path="asigna.fiscalizador.index" redirect="true" />
-            <forward name="ok" path="asigna.fiscalizador" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
+        
                 
         <action path="/ampliacion" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="ampliacion" scope="request">
             <forward name="ok" path="ampliacion.control" redirect="true" />
