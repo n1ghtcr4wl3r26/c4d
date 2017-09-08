@@ -29,16 +29,15 @@ public class MenuAction extends Action {
         request.getSession().setAttribute("opcion", bMenu.getOpcion());
 
         switch (bMenu.getOpcion()) {
-	case 1: 
+        case 1:
             return mapping.findForward("estadocarpeta");
 
-        case 3: 
-            //return mapping.findForward("asigna");
+        case 3:
             return mapping.findForward("generar");
-		
-        case 6: 
-                return mapping.findForward("verifica");
-        
+
+        case 6:
+            return mapping.findForward("verifica");
+
         case 101:
             return mapping.findForward("memorizaciondiferido");
 
@@ -152,7 +151,6 @@ public class MenuAction extends Action {
 
         case 66:
             return mapping.findForward("recuperacion.dui");
-
 
         default:
             request.getSession().removeAttribute("user.data");
