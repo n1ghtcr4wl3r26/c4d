@@ -8,29 +8,17 @@
     <form-beans>
         <form-bean name="EstadoCarpetasForm" type="anb.bean.EstadoCarpetasForm"/>
         <form-bean name="GenerarNumerosForm" type="anb.bean.GenerarNumerosForm"/>
-        <form-bean name="AsignaFiscalizadorForm" type="anb.bean.AsignaFiscalizadorForm"/>
         <form-bean name="VerificaNumeroForm" type="anb.bean.VerificaNumeroForm"/>
         <form-bean name="beanInput" type="anb.general.InputForm"/>
         <form-bean name="beanCambioForm" type="anb.general.CambioForm"/>
-        <form-bean name="beanMenu" type="anb.general.MenuForm"/>
-        <form-bean name="MemorizacionControlForm" type="anb.bean.MemorizacionControlForm"/>
-        <form-bean name="AlcanceForm" type="anb.bean.AlcanceForm"/>
-        <form-bean name="RegistroControlForm" type="anb.bean.RegistroControlForm"/>        
-        <form-bean name="AmpliacionForm" type="anb.bean.AmpliacionForm"/>
-        <form-bean name="NotificacionControlForm" type="anb.bean.NotificacionControlForm"/>
-        <form-bean name="GeneracionHojaForm" type="anb.bean.GeneracionHojaForm"/>
-        <form-bean name="SubirHojaForm" type="anb.bean.SubirHojaForm"/>
-        <form-bean name="GeneracionExcelForm" type="anb.bean.GeneracionExcelForm"/>
-        <form-bean name="ConclusionControlForm" type="anb.bean.ConclusionControlForm"/>
-        <form-bean name="NotificacionConclusionForm" type="anb.bean.NotificacionConclusionForm"/>
-        <form-bean name="CuadroLiquidacionForm" type="anb.bean.CuadroLiquidacionForm"/>
-        <form-bean name="TributosOmitidosForm" type="anb.bean.TributosOmitidosForm"/>
-        <form-bean name="ReporteForm" type="anb.bean.ReporteForm"/>
-        <form-bean name="ReporteControlForm" type="anb.bean.ReporteControlForm"/>   
-        <form-bean name="AnulacionForm" type="anb.bean.AnulacionForm"/>
-        <form-bean name="AdminForm" type="anb.bean.AdminForm"/>
-        <form-bean name="AlcanceItemForm" type="anb.bean.AlcanceItemForm"/>
-        <form-bean name="RegistroRecibosForm" type="anb.bean.RegistroRecibosForm"/>        
+        <form-bean name="beanMenu" type="anb.general.MenuForm"/>        
+        <form-bean name="GestionCarpetaForm" type="anb.bean.GestionCarpetaForm"/>
+        <form-bean name="ConsultaCarpetaForm" type="anb.bean.ConsultaCarpetaForm"/>
+        <form-bean name="AsignaCarpetaForm" type="anb.bean.AsignaCarpetaForm"/>        
+        <form-bean name="ConsultaDistribucionForm" type="anb.bean.ConsultaDistribucionForm"/>
+        <form-bean name="ConsultaNitForm" type="anb.bean.ConsultaNitForm"/>
+        <form-bean name="DistribucionCarpetasForm" type="anb.bean.DistribucionCarpetasForm"/>        
+        <form-bean name="AdminForm" type="anb.bean.AdminForm"/>        
     </form-beans>
     <global-forwards>
     </global-forwards>
@@ -39,44 +27,17 @@
             <forward name="estadocarpeta" path="/estadoidx.do" redirect="true" />
             <forward name="generar" path="/generaridx.do" redirect="true" />
             <forward name="verifica" path="/verificaidx.do" redirect="true" />
-            <forward name="asigna" path="/asignaidx.do" redirect="true" />            
-            <forward name="log" path="/log.do" redirect="true" />
+            
+            <forward name="gestion.carpeta" path="/gestioncarpeta.do" redirect="true" />            
+            <forward name="consulta.carpeta" path="/consultacarpeta.do" redirect="true" />
+            <forward name="asigna.carpeta" path="/asignacarpeta.do" redirect="true" />
+            <forward name="consulta.distribucion" path="/consultadistribucion.do" redirect="true" />
+            <forward name="consulta.nit" path="/consultanit.do" redirect="true" />
+            <forward name="distribucion.carpetas" path="/distribucioncarpetas.do" redirect="true" />
+           
             <forward name="usuario" path="demo.user.mod" />
-            <forward name="memorizacion" path="/memorizacion.do" redirect="true" />
-            <forward name="memorizaciondiferido" path="/memorizaciondiferidoidx.do" redirect="true" />
-            <forward name="alcance" path="/alcindex.do" redirect="true" />
-            <forward name="registro" path="/registroidx.do" redirect="true" />
-            <forward name="ampliacion" path="/ampindex.do" redirect="true" />
-            <forward name="notificacioncontrol" path="/notificacioncontrolidx.do" redirect="true" />
-            <forward name="generacionhoja" path="/generacionhojaidx.do" redirect="true" />
-            <forward name="subir" path="/subiridx.do" redirect="true" />
-            <forward name="generacionxls" path="/generacionxlsidx.do" redirect="true" />
-            <forward name="conclusion" path="/conclusionidx.do" redirect="true" />
-            <forward name="notificacionconclusion" path="/notificacionconclusionidx.do" redirect="true" />
-            <forward name="liquidacion" path="/liquidacionidx.do" redirect="true" />
-            <forward name="tributos" path="/tributosidx.do" redirect="true" />
-            <forward name="reporden" path="/repordenidx.do" redirect="true" />
-            <forward name="repnotificacion" path="/repnotificacionidx.do" redirect="true" />
-            <forward name="repalcance" path="/repalcanceidx.do" redirect="true" />
-            <forward name="repcontrol" path="/reportecontrolidx.do" redirect="true" />
-            <forward name="repampliacion" path="/repampliacionidx.do" redirect="true" />
-            <forward name="anulacion" path="/anulacionidx.do" redirect="true" />
-            <forward name="reasigna" path="/reasignaidx.do" redirect="true" />            
-            <forward name="repcontrolasig" path="/reportecontrolasigidx.do" redirect="true" />
-            <forward name="repcontrolgen" path="/reportecontrolgenidx.do" redirect="true" />
-            <forward name="repdetallecontrolsup" path="/reportedetallecontrolsupidx.do" redirect="true" />
-            <forward name="repdetallecontrolfis" path="/reportedetallecontrolfisidx.do" redirect="true" />
-            <forward name="repcuadroliquidacion" path="/reportecuadroliquidacionidx.do" redirect="true" />
-            <forward name="repliquidacionprevia" path="/reporteliquidacionpreviaidx.do" redirect="true" />
             <forward name="account" path="/account.do" redirect="true" />
-            <forward name="password" path="/passwordidx.do" redirect="true" />
-            <forward name="registrorecibos" path="/registrorecibosidx.do" redirect="true" />            
-            <forward name="seguimiento.orden" path="/reporte_seguimiento_ordenidx.do" redirect="true" />
-            <forward name="seguimiento.dui" path="/reporte_seguimiento_duiidx.do" redirect="true" />
-            <forward name="seguimiento.item" path="/reporte_seguimiento_itemidx.do" redirect="true" />
-            <forward name="liquidacion.dui" path="/reporte_liquidacion_duiidx.do" redirect="true" />
-            <forward name="liquidacion.item" path="/reporte_liquidacion_itemidx.do" redirect="true" />
-            <forward name="recuperacion.dui" path="/reporte_recuperacion_duiidx.do" redirect="true" />            
+            <forward name="password" path="/passwordidx.do" redirect="true" />                       
         </action>
         
         <!-- CARPETAS -->
@@ -95,16 +56,34 @@
             <forward name="ok" path="verifica.numero.index" redirect="true" />
             <forward name="nook" path="/input.jsp"/>
         </action>
-        
-        <!-- ASIGNA FISCALIZADOR -->
-        <action path="/asignaidx" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="asignaidx" scope="request">
-            <forward name="index" path="asigna.fiscalizador.index" redirect="true" />
-            <forward name="ok" path="asigna.fiscalizador" redirect="true" />
+        <action path="/gestioncarpeta" type="anb.action.GestionCarpetaAction" name="GestionCarpetaForm" parameter="gestioncarpetaidx" scope="request">
+            <forward name="index" path="gestion.carpeta" redirect="true" />
+            <forward name="ok" path="gestion.carpeta" redirect="true" />
             <forward name="nook" path="/input.jsp"/>
         </action>
-        <action path="/asigna" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="asigna" scope="request">
-            <forward name="index" path="asigna.fiscalizador.index" redirect="true" />
-            <forward name="ok" path="asigna.fiscalizador" redirect="true" />
+        <action path="/consultacarpeta" type="anb.action.ConsultaCarpetaAction" name="ConsultaCarpetaForm" parameter="consultacarpetaidx" scope="request">
+            <forward name="index" path="consulta.carpeta" redirect="true" />
+            <forward name="ok" path="consulta.carpeta" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/asignacarpeta" type="anb.action.AsignaCarpetaAction" name="AsignaCarpetaForm" parameter="asignacarpetaidx" scope="request">
+            <forward name="index" path="asigna.carpeta" redirect="true" />
+            <forward name="ok" path="asigna.carpeta" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/consultadistribucion" type="anb.action.ConsultaDistribucionAction" name="ConsultaDistribucionForm" parameter="consultadistribucionidx" scope="request">
+            <forward name="index" path="consulta.distribucion" redirect="true" />
+            <forward name="ok" path="consulta.distribucion" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/consultanit" type="anb.action.ConsultaNitAction" name="ConsultaNitForm" parameter="consultanitidx" scope="request">
+            <forward name="index" path="consulta.nit" redirect="true" />
+            <forward name="ok" path="consulta.nit" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/distribucioncarpetas" type="anb.action.DistribucionCarpetasAction" name="DistribucionCarpetasForm" parameter="distribucioncarpetasidx" scope="request">
+            <forward name="index" path="distribucion.carpetas" redirect="true" />
+            <forward name="ok" path="distribucion.carpetas" redirect="true" />
             <forward name="nook" path="/input.jsp"/>
         </action>
         
@@ -140,381 +119,6 @@
             <forward name="ok" path="admin.password" redirect="true" />
             <forward name="nook" path="/input.jsp"/>
         </action>
-        
-        <!-- CONTROL -->
-        <!-- MEMORIZACION CONTROL-->
-        <action path="/memorizacion" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="index" scope="request">
-            <forward name="ok" path="memorizacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/memorizaciondif" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizardif" scope="request">
-            <forward name="ok" path="memorizacion.control" redirect="true" />
-            <forward name="success" path="memorizacion.control.ok" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/memorizacionpos" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizarpos" scope="request">
-            <forward name="ok" path="memorizacion.control" redirect="true" />
-            <forward name="success" path="memorizacion.control.ok" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/memorizacionamp" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizaramp" scope="request">
-            <forward name="ok" path="memorizacion.control" redirect="true" />
-            <forward name="success" path="memorizacion.control.ok" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/memorizacionenv" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizarenv" scope="request">
-            <forward name="ok" path="memorizacion.control" redirect="true" />
-            <forward name="alcance" path="/alcindex2.do" redirect="true" />
-            <forward name="success" path="memorizacion.control.ok" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/memorizacionenvreg" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizarenvreg" scope="request">
-            <forward name="ok" path="memorizacion.control" redirect="true" />
-            <forward name="alcance" path="/alcindex2.do" redirect="true" />
-            <forward name="registro" path="/registro.do" redirect="true" />
-            <forward name="success" path="memorizacion.control.ok" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/completanit" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm"
-            parameter="completanit" scope="request">
-        </action>        
-        
-        <!-- MEMORIZACION CONTROL DIFERIDO-->
-        <action path="/memorizaciondiferidoidx" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizardiferidoindex" scope="request">
-            <forward name="ok" path="memorizacion.diferido.index" redirect="true" />
-            <forward name="success" path="memorizacion.diferido" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/memorizaciondiferido" type="anb.action.MemorizacionControlAction" name="MemorizacionControlForm" parameter="memorizardiferido" scope="request">
-            <forward name="ok" path="memorizacion.diferido" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- ALCANCE CONTROL -->
-        <action path="/alcindex2" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="index2" scope="request">
-            <forward name="index" path="alcance.control.index" redirect="true" />
-            <forward name="ok" path="/alcance.do" redirect="true" />
-            <forward name="oktram" path="/alcancetramite.do" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/alcindex" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="index" scope="request">
-            <forward name="index" path="alcance.control.index" redirect="true" />
-            <forward name="ok" path="/alcance.do" redirect="true" />
-            <forward name="oktram" path="/alcancetramite.do" redirect="true" />
-            <forward name="okamp" path="alcance.ampliatoria" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/alcance" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="alcance" scope="request">
-            <forward name="ok" path="alcance.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/alcconsultar" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="alcconsultar" scope="request">
-            <forward name="ok" path="alcance.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/alcancetramite" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="alcancetramite" scope="request">
-            <forward name="ok" path="alcance.tramite" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/alcanceampliatoria" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="alcanceampliatoria" scope="request">
-            <forward name="ok" path="alcance.ampliatoria" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>      
-        <action path="/alcanceEdit" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="alcanceEdit" scope="request">
-            <forward name="alcance.edit" path="/pages/control/alcanceEdit.jsp"/>
-        </action>
-        <action path="/alcanceGuardar" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="alcanceGuardar" scope="request">
-            <forward name="ok" path="alcance.control"/>
-            <forward name="oktram" path="alcance.tramite"/>
-        </action>
-        <!-- REGISTRO CONTROL -->
-        <action path="/registroidx" type="anb.action.RegistroControlAction" name="RegistroControlForm" parameter="registroidx" scope="request">
-            <forward name="index" path="registro.control.index" redirect="true" />
-            <forward name="ok" path="registro.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/registro" type="anb.action.RegistroControlAction" name="RegistroControlForm" parameter="registro" scope="request">
-            <forward name="index" path="registro.control.index" redirect="true" />
-            <forward name="ok" path="registro.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- REASIGNA FISCALIZADOR -->
-        <action path="/reasignaidx" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="reasignaidx" scope="request">
-            <forward name="index" path="reasigna.fiscalizador.index" redirect="true" />
-            <forward name="ok" path="reasigna.fiscalizador" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reasigna" type="anb.action.AsignaFiscalizadorAction" name="AsignaFiscalizadorForm" parameter="reasigna" scope="request">
-            <forward name="index" path="reasigna.fiscalizador.index" redirect="true" />
-            <forward name="ok" path="reasigna.fiscalizador" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        
-                
-        <action path="/ampliacion" type="anb.action.AlcanceAction" name="AlcanceForm" parameter="ampliacion" scope="request">
-            <forward name="ok" path="ampliacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- AMPLIACION CONTROL -->
-        <action path="/ampindex2" type="anb.action.AmpliacionAction" name="AmpliacionForm" parameter="index2" scope="request">
-            <forward name="index" path="ampliacion.control.index" redirect="true" />
-            <forward name="ok" path="/ampliacion.do" redirect="true" />
-            <forward name="oktram" path="/ampliaciontramite.do" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/ampindex" type="anb.action.AmpliacionAction" name="AmpliacionForm" parameter="index" scope="request">
-            <forward name="index" path="ampliacion.control.index" redirect="true" />
-            <forward name="ok" path="/ampliacion.do" redirect="true" />
-            <forward name="oktram" path="/ampliaciontramite.do" redirect="true" />
-            <forward name="okamp" path="ampliacion.ampliatoria" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/ampliacion" type="anb.action.AmpliacionAction" name="AmpliacionForm" parameter="ampliacion" scope="request">
-            <forward name="ok" path="ampliacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/ampconsultar" type="anb.action.AmpliacionAction" name="AmpliacionForm" parameter="ampconsultar" scope="request">
-            <forward name="ok" path="ampliacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/ampliaciontramite" type="anb.action.AmpliacionAction" name="AmpliacionForm" parameter="ampliaciontramite" scope="request">
-            <forward name="ok" path="ampliacion.tramite" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- NOTIFICACION CONTROL -->
-        <action path="/notificacioncontrolidx" type="anb.action.NotificacionControlAction" name="NotificacionControlForm" parameter="notificacionidx" scope="request">
-            <forward name="index" path="notificacion.control.index" redirect="true" />
-            <forward name="ok" path="notificacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/notificacioncontrol" type="anb.action.NotificacionControlAction" name="NotificacionControlForm" parameter="notificacion" scope="request">
-            <forward name="index" path="notificacion.control.index" redirect="true" />
-            <forward name="ok" path="notificacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- GENERACION HOJA DE TRABAJO -->
-        <action path="/generacionhojaidx" type="anb.action.GeneracionHojaAction" name="GeneracionHojaForm" parameter="generacionidx" scope="request">
-            <forward name="index" path="generacion.hoja.index" redirect="true" />
-            <forward name="ok" path="generacion.hoja" redirect="true" />
-            <forward name="oktramite" path="generacion.hoja.tramite" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/generacionhoja" type="anb.action.GeneracionHojaAction" name="GeneracionHojaForm" parameter="generacion" scope="request">
-            <forward name="index" path="generacion.hoja.index" redirect="true" />
-            <forward name="ok" path="generacion.hoja" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/generacionhojatramite" type="anb.action.GeneracionHojaAction" name="GeneracionHojaForm" parameter="generaciontramite" scope="request">
-            <forward name="index" path="generacion.hoja.index" redirect="true" />
-            <forward name="ok" path="generacion.hoja.tramite" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- SUBIR HOJA DE TRABAJO -->
-        <action path="/subiridx" type="anb.action.SubirHojaAction" name="SubirHojaForm" parameter="subiridx" scope="request">
-            <forward name="index" path="subir.hoja.index" redirect="true" />
-            <forward name="ok" path="subir.hoja" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/subir" type="anb.action.SubirHojaAction" name="SubirHojaForm" parameter="subir" scope="request">
-            <forward name="index" path="subir.hoja.index" redirect="true" />
-            <forward name="ok" path="subir.hoja" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- GENERACION HOJA EXCEL -->
-        <action path="/generacionxlsidx" type="anb.action.GeneracionExcelAction" name="GeneracionExcelForm" parameter="generacionidx" scope="request">
-            <forward name="index" path="generacion.excel.index" redirect="true" />
-            <forward name="ok" path="generacion.excel" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/generacionxls" type="anb.action.GeneracionExcelAction" name="GeneracionExcelForm" parameter="generacion" scope="request">
-            <forward name="index" path="generacion.excel.index" redirect="true" />
-            <forward name="ok" path="generacion.excel" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- CONCLUSION CONTROL -->
-        <action path="/conclusionidx" type="anb.action.ConclusionControlAction" name="ConclusionControlForm" parameter="conclusionidx" scope="request">
-            <forward name="index" path="conclusion.control.index" redirect="true" />
-            <forward name="ok" path="conclusion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/conclusion" type="anb.action.ConclusionControlAction" name="ConclusionControlForm" parameter="conclusion" scope="request">
-            <forward name="index" path="conclusion.control.index" redirect="true" />
-            <forward name="ok" path="conclusion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-               
-        <!-- NOTIFICACION CONCLUSION CONTROL -->
-        <action path="/notificacionconclusionidx" type="anb.action.NotificacionConclusionAction" name="NotificacionConclusionForm" parameter="notificacionconclusionidx" scope="request">
-            <forward name="index" path="notificacion.conclusion.index" redirect="true" />
-            <forward name="ok" path="notificacion.conclusion" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/notificacionconclusion" type="anb.action.NotificacionConclusionAction" name="NotificacionConclusionForm" parameter="notificacionconclusion" scope="request">
-            <forward name="index" path="notificacion.conclusion.index" redirect="true" />
-            <forward name="ok" path="notificacion.conclusion" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- CUADRO LIQUIDACION -->
-        <action path="/liquidacionidx" type="anb.action.CuadroLiquidacionAction" name="CuadroLiquidacionForm" parameter="liquidacionidx" scope="request">
-            <forward name="index" path="cuadro.liquidacion.index" redirect="true" />
-            <forward name="ok" path="cuadro.liquidacion" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/liquidacion" type="anb.action.CuadroLiquidacionAction" name="CuadroLiquidacionForm" parameter="liquidacion" scope="request">
-            <forward name="index" path="cuadro.liquidacion.index" redirect="true" />
-            <forward name="ok" path="cuadro.liquidacion" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- TRIBUTOS OMITIDOS -->
-        <action path="/tributosidx" type="anb.action.TributosOmitidosAction" name="TributosOmitidosForm" parameter="tributosidx" scope="request">
-            <forward name="index" path="tributos.omitidos.index" redirect="true" />
-            <forward name="ok" path="tributos.omitidos" redirect="true" />
-            <forward name="okimp" path="/pages/control/reporte_resumen_tributos.jsp" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/tributos" type="anb.action.TributosOmitidosAction" name="TributosOmitidosForm" parameter="tributos" scope="request">
-            <forward name="index" path="tributos.omitidos.index" redirect="true" />
-            <forward name="ok" path="tributos.omitidos" redirect="true" />
-            <forward name="okimp" path="/pages/control/reporte_resumen_tributos.jsp" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- REPORTES -->
-        <action path="/repordenidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="repordenidx" scope="request">
-            <forward name="index" path="reporte.orden.index" redirect="true" />
-            <forward name="ok" path="/pages/control/reporte_orden.jsp" redirect="true" />
-            <forward name="error" path="/pages/control/reporte_error.jsp" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/repnotificacionidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="repnotificacionidx" scope="request">
-            <forward name="index" path="reporte.notificacion.index" redirect="true" />
-            <forward name="ok" path="/pages/control/reporte_notificacion.jsp" redirect="true" />
-            <forward name="error" path="/pages/control/reporte_error.jsp" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/repalcanceidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="repalcanceidx" scope="request">
-            <forward name="index" path="reporte.alcance.index" redirect="true" />
-            <forward name="ok" path="/pages/control/reporte_alcance.jsp" redirect="true" />
-            <forward name="error" path="/pages/control/reporte_error.jsp" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/repampliacionidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="repampliacionidx" scope="request">
-            <forward name="index" path="reporte.ampliacion.index" redirect="true" />
-            <forward name="ok" path="/pages/control/reporte_ampliacion.jsp" redirect="true" />
-            <forward name="error" path="/pages/control/reporte_error.jsp" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <!-- REPORTE CONTROL -->
-        <action path="/reportecontrolidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportecontrolidx" scope="request">
-            <forward name="index" path="reporte.control.index" redirect="true" />
-            <forward name="ok" path="reporte.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reportecontrol" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportecontrol" scope="request">
-            <forward name="index" path="reporte.control.index" redirect="true" />
-            <forward name="ok" path="reporte.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- REPORTES 2DA PARTE -->
-        <action path="/reportecontrolasigidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportecontrolasigidx" scope="request">
-            <forward name="index" path="reporte.control.asig.index" redirect="true" />
-            <forward name="ok" path="reporte.control.asig" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reportecontrolgenidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportecontrolgenidx" scope="request">
-            <forward name="index" path="reporte.control.gen.index" redirect="true" />
-            <forward name="ok" path="reporte.control.gen" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reportedetallecontrolsupidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportedetallecontrolsupidx" scope="request">
-            <forward name="index" path="reporte.detalle.control.sup.index" redirect="true" />
-            <forward name="ok" path="reporte.detalle.control.sup" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reportedetallecontrolfisidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportedetallecontrolfisidx" scope="request">
-            <forward name="index" path="reporte.detalle.control.fis.index" redirect="true" />
-            <forward name="ok" path="reporte.detalle.control.fis" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reportecuadroliquidacionidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reportecuadroliquidacionidx" scope="request">
-            <forward name="index" path="reporte.cuadro.liquidacion.index" redirect="true" />
-            <forward name="ok" path="reporte.cuadro.liquidacion" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reporteliquidacionpreviaidx" type="anb.action.ReporteControlAction" name="ReporteControlForm" parameter="reporteliquidacionpreviaidx" scope="request">
-            <forward name="index" path="reporte.liquidacion.previa.index" redirect="true" />
-            <forward name="ok" path="reporte.liquidacion.previa" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-                
-        <!-- ANULACION CONTROL -->
-        <action path="/anulacionidx" type="anb.action.AnulacionAction" name="AnulacionForm" parameter="anulacionidx" scope="request">
-            <forward name="index" path="anulacion.control.index" redirect="true" />
-            <forward name="ok" path="anulacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/anulacion" type="anb.action.AnulacionAction" name="AnulacionForm" parameter="anulacion" scope="request">
-            <forward name="index" path="anulacion.control.index" redirect="true" />
-            <forward name="ok" path="anulacion.control" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!--REGISTRO RECIBOS -->
-        <action path="/registrorecibosidx" type="anb.action.RegistroRecibosAction" name="RegistroRecibosForm" parameter="registrorecibosidx" scope="request">
-            <forward name="index" path="registro.recibos.index" redirect="true" />
-            <forward name="ok" path="registro.recibos" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/registrorecibos" type="anb.action.RegistroRecibosAction" name="RegistroRecibosForm" parameter="registrorecibos" scope="request">
-            <forward name="index" path="registro.recibos.index" redirect="true" />
-            <forward name="ok" path="registro.recibos" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        
-        <!-- REPORTES 3RA PARTE -->
-        <action path="/reporte_seguimiento_ordenidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="reporte_seguimiento_ordenidx" scope="request">
-            <forward name="index" path="reporte.seguimiento.orden.index" redirect="true" />
-            <forward name="ok" path="reporte.seguimiento.orden" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reporte_seguimiento_duiidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="reporte_seguimiento_duiidx" scope="request">
-            <forward name="index" path="reporte.seguimiento.dui.index" redirect="true" />
-            <forward name="ok" path="reporte.seguimiento.dui" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reporte_seguimiento_itemidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="reporte_seguimiento_itemidx" scope="request">
-            <forward name="index" path="reporte.seguimiento.item.index" redirect="true" />
-            <forward name="ok" path="reporte.seguimiento.item" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reporte_liquidacion_duiidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="reporte_liquidacion_duiidx" scope="request">
-            <forward name="index" path="reporte.liquidacion.dui.index" redirect="true" />
-            <forward name="ok" path="reporte.liquidacion.dui" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reporte_liquidacion_itemidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="reporte_liquidacion_itemidx" scope="request">
-            <forward name="index" path="reporte.liquidacion.item.index" redirect="true" />
-            <forward name="ok" path="reporte.liquidacion.item" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>
-        <action path="/reporte_recuperacion_duiidx" type="anb.action.ReporteAction" name="ReporteForm" parameter="reporte_recuperacion_duiidx" scope="request">
-            <forward name="index" path="reporte.recuperacion.dui.index" redirect="true" />
-            <forward name="ok" path="reporte.recuperacion.dui" redirect="true" />
-            <forward name="nook" path="/input.jsp"/>
-        </action>        
-
     </action-mappings>
     <controller nocache="true" processorClass="anb.general.AnbRequestProcessor" />
     <message-resources parameter="anb.general.config"/>

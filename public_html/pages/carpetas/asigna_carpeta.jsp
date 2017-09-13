@@ -4,14 +4,14 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <strong>GENERAR NÚMEROS</strong>
+            <strong>ASIGNA CARPETA</strong>
         </h4>
     </div>
     <div class="modal-body form-horizontal">
-        <html:form styleId="form-asigna" action="generaridx.do">
+        <html:form styleId="form-asignacarpeta" action="asignacarpeta.do">
             <input type="hidden" name="boton" id="boton"/>
             <div class="form-group">
-                <label class="col-sm-3 control-label">N&uacute;mero de Carpeta a Generar:</label>
+                <label class="col-sm-3 control-label">N&uacute;mero de Carpeta:</label>
                 <div class="col-sm-3">
                     <html:text property="numero" styleId="numero" maxlength="15" styleClass="form-control required numeric" size="15"/>
                 </div>
@@ -29,10 +29,10 @@
 </div>
 <script>
     $(document).ready(function () {
-        Anb.form.submit('#form-asigna', function (form) {
+        Anb.form.submit('#form-asignacarpeta', function (form) {
             Anb.form.cleanErrors(form);           
             if (Anb.validate.run(form)) {
-                $("#boton").val('Generar');
+                $("#boton").val('Asigna');
                 console.log('Enviado!');
                 Anb.loading.show()                
                 form.submit();
@@ -41,7 +41,7 @@
         $("#botonsubmit").removeAttr("disabled");
     });
     function consultar(){
-        $("#boton").val('Generar');  
+        $("#boton").val('Verificar');  
         
        
     }

@@ -4,11 +4,11 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <strong>VERIFICA NÚMEROS</strong>
+            <strong>CONSULTA CARPETA</strong>
         </h4>
     </div>
     <div class="modal-body form-horizontal">
-        <html:form styleId="form-verificaridx" action="verificaidx.do">
+        <html:form styleId="form-consultacarpeta" action="consultacarpeta.do">
             <input type="hidden" name="boton" id="boton"/>
             <div class="form-group">
                 <label class="col-sm-3 control-label">N&uacute;mero de Carpeta:</label>
@@ -29,10 +29,10 @@
 </div>
 <script>
     $(document).ready(function () {
-        Anb.form.submit('#form-verificaridx', function (form) {
+        Anb.form.submit('#form-consultacarpeta', function (form) {
             Anb.form.cleanErrors(form);           
             if (Anb.validate.run(form)) {
-                $("#boton").val('Verificar');
+                $("#boton").val('Verifica');
                 console.log('Enviado!');
                 Anb.loading.show()                
                 form.submit();
