@@ -11,13 +11,17 @@
         <html:form styleId="form-asignacarpeta" action="asignacarpeta.do">
             <input type="hidden" name="boton" id="boton"/>
             <div class="form-group">
+                <label class="col-sm-3 control-label">N&uacute;mero de NIT:</label>
+                <div class="col-sm-3">
+                    <html:text property="nit" styleId="nit" maxlength="15" styleClass="form-control required numeric" size="15"/>
+                </div>
                 <label class="col-sm-3 control-label">N&uacute;mero de Carpeta:</label>
                 <div class="col-sm-3">
                     <html:text property="numero" styleId="numero" maxlength="15" styleClass="form-control required numeric" size="15"/>
                 </div>
             </div>
             <div class="btn-container">
-                <button type="submit" id="botonsubmit" onclick="consultar()" class="btn btn-primary" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consultar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>            
+                <button type="submit" id="botonsubmit" onclick="consultar()" class="btn btn-primary" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asociar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>            
             </div>
             <div class="form-group">
                 <label class="label-message-required">

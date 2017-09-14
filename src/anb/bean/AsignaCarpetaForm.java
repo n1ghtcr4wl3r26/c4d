@@ -9,6 +9,7 @@ public class AsignaCarpetaForm extends ActionForm {
     private String codger;
     private String usuario;
     private String numero;
+    private String nit;
 
     public void setBoton(String boton) {
         this.boton = boton;
@@ -56,5 +57,13 @@ public class AsignaCarpetaForm extends ActionForm {
 
     public String getNumero() {
         return numero;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
+
+    public String getNit() {
+        return nit;
     }
 }

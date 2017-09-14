@@ -30,41 +30,64 @@ public class ConsultaCarpetaAction extends MappingDispatchAction {
         String link = "index";
 
         String usuario = (String)request.getSession().getAttribute("user");
+        bean.setUsuario(usuario);
         if (usuario == null) {
             return mapping.findForward("nook");
         }
-        if (!(bean.getBoton() == null) && bean.getBoton().equals("Verifica")) {
-            ConexionCad dc = new ConexionCad();
-            Connection con = null;
-            CallableStatement call = null;
-            try {
-                con = dc.abrirConexion();
-                call = con.prepareCall("{? = call ops$asy.carpetas.devuelve_valido(?,?) }");
-                call.registerOutParameter(1, 1);
-                call.setString(2, bean.getNumero());
-                call.execute();
-                String mensaje = (String)call.getObject(1);
-                if (mensaje.equals("1")) {
-                    request.setAttribute("OK",
-                                         "El N&uacute;mero: " + bean.getNumero().toString() + " es v&aacute;lido." +
-                                         bean.getNumero().toString());
-                } else {
-                    request.setAttribute("ERROR",
-                                         "El N&uacute;mero: " + bean.getNumero().toString() + " no es v&aacute;lido.");
-                }
-            } catch (Exception e) {
-                ActionForward actionforward = mapping.findForward("ok");
-                return actionforward;
-            } finally {
-                try {
-                    if (con != null)
-                        con.close();
+        if (bean.getNumopc() == null) {
 
-                } catch (SQLException er) {
-                    ;
+            if (!(bean.getBoton() == null) && bean.getBoton().equals("Verifica")) {
+                ConexionCad dc = new ConexionCad();
+                Connection con = null;
+                CallableStatement call = null;
+                CallableStatement call2 = null;
+                try {
+                    con = dc.abrirConexion();
+                    call = con.prepareCall("{? = call ops$asy.carpetas.carpeta_estado(?) }");
+                    call.registerOutParameter(1, 1);
+                    call.setString(2, bean.getNumero());
+                    call.execute();
+                    String mensaje = (String)call.getObject(1);
+                    if (mensaje.equals("0")) {
+                        request.setAttribute("ERROR",
+                                             "El N&uacute;mero: " + bean.getNumero().toString() + " no es v&aacute;lido.");
+                    } else {
+                        if (mensaje.equals("1")) {
+                            call2 = con.prepareCall("{? = call ops$asy.carpetas.carpeta_asociada(?) }");
+                            call2.registerOutParameter(1, 1);
+                            call2.setString(2, bean.getNumero());
+                            call2.execute();
+                            String asociado = (String)call2.getObject(1);
+                            if (asociado.equals("0")) {
+                                request.setAttribute("OK",
+                                                     "El N&uacute;mero de carpeta " + bean.getNumero().toString() + " no asociado a ninguna Declaraci&oacute;n.");
+                            } else {
+                                request.setAttribute("OK",
+                                                     "El N&uacute;mero de carpeta " + bean.getNumero().toString() + " se encuentra asociado a una Declaraci&oacute;n.");
+                                bean.setResultado(asociado);
+                                request.setAttribute("GestionCarpetaForm", bean);
+                            }
+                        } else {
+                            if (mensaje.equals("2")) {
+                                request.setAttribute("WARNING",
+                                                     "El N&uacute;mero de carpeta " + bean.getNumero().toString() + " se encuentra dada de baja.");
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    ActionForward actionforward = mapping.findForward("ok");
+                    return actionforward;
+                } finally {
+                    try {
+                        if (con != null)
+                            con.close();
+
+                    } catch (SQLException er) {
+                        ;
+                    }
                 }
             }
-        }
+        } 
         return mapping.findForward(link);
     }
 }

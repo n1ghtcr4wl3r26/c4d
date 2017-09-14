@@ -10,6 +10,7 @@
     <div class="modal-body form-horizontal">
         <html:form styleId="form-consultacarpeta" action="consultacarpeta.do">
             <input type="hidden" name="boton" id="boton"/>
+            <input type="hidden" name="opcion" id="opcion"/>
             <div class="form-group">
                 <label class="col-sm-3 control-label">N&uacute;mero de Carpeta:</label>
                 <div class="col-sm-3">
@@ -23,6 +24,14 @@
                 <label class="label-message-required">
                     * Campos Obligatorios
                 </label>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div class="panel-body">
+                <div  align="center" class="panel-body form-horizontal col-lg-6 col-sm-6">
+                    ${ConsultaCarpetaForm.resultado}
+                </div>
             </div>
         </html:form>
     </div>

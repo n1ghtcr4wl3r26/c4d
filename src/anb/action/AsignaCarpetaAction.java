@@ -4,6 +4,7 @@ package anb.action;
 import anb.bean.AsignaCarpetaForm;
 
 import anb.general.ConexionCad;
+import anb.general.Util;
 
 import anb.negocio.GeneralNeg;
 
@@ -34,35 +35,77 @@ public class AsignaCarpetaAction extends MappingDispatchAction {
             return mapping.findForward("nook");
         }
         if (!(bean.getBoton() == null) && bean.getBoton().equals("Asigna")) {
-            ConexionCad dc = new ConexionCad();
-            Connection con = null;
-            CallableStatement call = null;
-            try {
-                con = dc.abrirConexion();
-                call = con.prepareCall("{? = call ops$asy.carpetas.devuelve_valido(?,?) }");
-                call.registerOutParameter(1, 1);
-                call.setString(2, bean.getNumero());
-                call.execute();
-                String mensaje = (String)call.getObject(1);
-                if (mensaje.equals("1")) {
-                    request.setAttribute("OK",
-                                         "El N&uacute;mero: " + bean.getNumero().toString() + " es v&aacute;lido." +
-                                         bean.getNumero().toString());
-                } else {
-                    request.setAttribute("ERROR",
-                                         "El N&uacute;mero: " + bean.getNumero().toString() + " no es v&aacute;lido.");
-                }
-            } catch (Exception e) {
-                ActionForward actionforward = mapping.findForward("ok");
-                return actionforward;
-            } finally {
-                try {
-                    if (con != null)
-                        con.close();
+            String ncarpeta;
+            String eval = Util.es_despacho_directo(bean.getNit());
+            if (eval.equals("0")) {
+                request.setAttribute("ERROR",
+                                     "El NIT " + bean.getNit().toString() + " no corresponde a un Importador de Despacho Directo.");
+            } else {
 
-                } catch (SQLException er) {
-                    ;
+                ncarpeta = Util.devuelve_secuencia(bean.getNumero());
+                if (ncarpeta == null) {
+                    request.setAttribute("ERROR",
+                                         "El N&uacute;mero de Carpeta " + bean.getNumero().toString() + " no es v&aacute;lido.");
+                } else {
+                    ncarpeta = Util.devuelve_asociado(bean.getNumero());
+                    if (ncarpeta != null) {
+                        request.setAttribute("ERROR",
+                                             "El N&uacute;mero de Carpeta " + bean.getNumero().toString() + " ya esta asociado al NIT " +
+                                             ncarpeta);
+                    } else {
+                        ncarpeta = Util.devuelve_dui_asociado(bean.getNumero());
+                        if (!(ncarpeta.equals("0"))) {
+                            request.setAttribute("ERROR",
+                                                 "El N&uacute;mero de Carpeta " + bean.getNumero().toString() +
+                                                 " ya esta asociado a una Declaraci&oacute;n:" + ncarpeta);
+                        } else {
+                            ConexionCad dc = new ConexionCad();
+                            Connection con = null;
+                            CallableStatement call = null;
+                            String rs = "";
+                            String mensaje;
+                            String estado;
+                            String nrocarpeta;
+                            try {
+
+                                if (bean.getBoton().equals("Asociar")) {
+                                    request.getSession().setAttribute("nrocarpeta", bean.getNumero().toString());
+                                    usuario = (String)request.getSession().getAttribute("user");
+                                    con = dc.abrirConexion();
+                                    call = con.prepareCall("{ ? = call ops$asy.carpetas.asocia_carpeta(?,?,?,?) }");
+                                    call.registerOutParameter(1, 1);
+                                    call.setString(2, bean.getNumero().toString());
+                                    call.setString(3, bean.getNit().toString());
+                                    call.setString(4, "");
+                                    call.setString(5, usuario);
+                                    call.execute();
+                                    estado = (String)call.getObject(1);
+                                    if (estado.equals("OK")) {
+                                        request.setAttribute("OK",
+                                                             "El N&uacute;mero de carpeta: " + bean.getNumero().toString() +
+                                                             " fue asociado al NIT: " + bean.getNit());
+                                    } else {
+                                        request.setAttribute("ERROR",
+                                                             "El N&uacute;mero de carpeta: " + bean.getNumero().toString() +
+                                                             " no pudo ser asociado al NIT: " + bean.getNit());
+                                    }
+                                }
+                            } catch (Exception e) {
+                                ActionForward actionforward = mapping.findForward("asicar");
+                                return actionforward;
+                            } finally {
+                                try {
+                                    if (con != null)
+                                        con.close();
+
+                                } catch (SQLException er) {
+                                    ;
+                                }
+                            }
+                        }
+                    }
                 }
+
             }
         }
         return mapping.findForward(link);
