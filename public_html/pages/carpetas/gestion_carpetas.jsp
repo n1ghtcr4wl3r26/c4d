@@ -10,6 +10,7 @@
     <div class="modal-body form-horizontal">
         <html:form styleId="form-gestioncarpeta" action="gestioncarpeta.do">
             <input type="hidden" name="boton" id="boton"/>
+            <input type="hidden" name="opcion" id="opcion"/>
             <div class="form-group">
                 <label class="col-sm-3 control-label">N&uacute;mero de Carpeta:</label>
                 <div class="col-sm-3">
@@ -23,6 +24,14 @@
                 <label class="label-message-required">
                     * Campos Obligatorios
                 </label>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div class="panel-body">
+                <div  align="center" class="panel-body form-horizontal col-lg-6 col-sm-6">
+                    ${GestionCarpetaForm.resultado}
+                </div>
             </div>
         </html:form>
     </div>
@@ -40,9 +49,22 @@
         });
         $("#botonsubmit").removeAttr("disabled");
     });
+    
     function consultar(){
         $("#boton").val('Verificar');  
-        
-       
+    }
+    
+    function baja(){
+        Anb.confirm('¿Está seguro que desea dar de baja el número de carpeta?', function () {
+            $("#opcion").val('Baja'); 
+            $("#form-gestioncarpeta").submit();
+        });
+    }
+    
+    function rehabilitar(){
+        Anb.confirm('¿Está seguro que desea rehabilitar el número de carpeta?', function () {
+            $("#opcion").val('Rehabilitar'); 
+            $("#form-gestioncarpeta").submit();
+        });
     }
 </script>

@@ -9,6 +9,9 @@ public class GestionCarpetaForm extends ActionForm {
     private String codger;
     private String usuario;
     private String numero;
+    private String resultado;
+    private String observacion;
+    private String numopc;
 
     public void setBoton(String boton) {
         this.boton = boton;
@@ -56,5 +59,29 @@ public class GestionCarpetaForm extends ActionForm {
 
     public String getNumero() {
         return numero;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setNumopc(String numopc) {
+        this.numopc = numopc;
+    }
+
+    public String getNumopc() {
+        return numopc;
     }
 }
