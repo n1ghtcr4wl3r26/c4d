@@ -63,12 +63,12 @@ public class GestionCarpetaAction extends MappingDispatchAction {
                                 tbl = tbl + "<input type='hidden' name='numopc' id='numopc' value='"+bean.getNumero() +"'/>" +
                                       "<table class=\"table table-striped table-hover\">";
                                 tbl =
-tbl + "<thead><tr><td><b>N&uacute;mero de carpeta no asociado a ninguna Declaraci&oacute;n</b></td></tr></thead>";
+                                tbl + "<thead><tr><td><b>N&uacute;mero de carpeta no asociado a ninguna Declaraci&oacute;n</b></td></tr></thead>";
                                 tbl =
-tbl + "<tbody><tr><td>Observacion: <input type='text' name='observacion' value=''></td></tr>";
+                                tbl + "<tbody><tr><td>Observacion: <input type='text' name='observacion' value=''></td></tr>";
                                 tbl =
-tbl + "<tr><td>" + "<button class='btn btn-info btn-sm newHide' type='button' id='btnbaj' title='Dar de baja numero de carpeta' onclick='baja()'>" +
-  "<i class='fa fa-percent'></i> Dar de baja</button>" + "</td></tr>";
+                                tbl + "<tr><td>" + "<button class='btn btn-info btn-sm newHide' type='button' id='btnbaj' title='Dar de baja numero de carpeta' onclick='baja()'>" +
+                                      "<i class='fa fa-percent'></i> Dar de baja</button>" + "</td></tr>";
                                 tbl = tbl + "</table>";
                                 bean.setResultado(tbl);
                                 request.setAttribute("GestionCarpetaForm", bean);

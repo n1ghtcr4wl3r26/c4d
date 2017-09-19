@@ -9,6 +9,9 @@ public class ConsultaNitForm  extends ActionForm{
     private String codger;
     private String usuario;
     private String numero;
+    private String nit;
+    private String fecini;
+    private String fecfin;
 
     public void setBoton(String boton) {
         this.boton = boton;
@@ -56,5 +59,29 @@ public class ConsultaNitForm  extends ActionForm{
 
     public String getNumero() {
         return numero;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
+
+    public String getNit() {
+        return nit;
+    }
+
+    public void setFecini(String fecini) {
+        this.fecini = fecini;
+    }
+
+    public String getFecini() {
+        return fecini;
+    }
+
+    public void setFecfin(String fecfin) {
+        this.fecfin = fecfin;
+    }
+
+    public String getFecfin() {
+        return fecfin;
     }
 }

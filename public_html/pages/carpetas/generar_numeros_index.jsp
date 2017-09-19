@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@ page import="anb.general.*"%>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
@@ -22,6 +23,10 @@
             <div class="form-group">
                 <label class="label-message-required">
                     * Campos Obligatorios
+                </label>
+                <br/>
+                <label class="label-message-info">
+                    El ultimo número maximo generado es el <%=Util.devuelveMaximo()%>
                 </label>
             </div>
         </html:form>

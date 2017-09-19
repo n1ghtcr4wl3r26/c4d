@@ -367,6 +367,13 @@ label + .input-error:before,
   margin: 0 0 0 15px;
   position: absolute;
 }
+.label-message-info {
+  color: #0185E8;
+  font-size: 12px;
+  font-style: italic;
+  margin: 0 0 0 15px;
+  position: absolute;
+}
 .has-error .form-control {
   border-color: #e6344a;
 }

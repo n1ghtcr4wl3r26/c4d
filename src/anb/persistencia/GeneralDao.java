@@ -27,6 +27,26 @@ public class GeneralDao extends Conexion{
         super();
     }
     
+    public String devuelve_maximo() throws SQLException, ClassNotFoundException, NamingException {
+        String res = "";
+        try {
+            open();
+            call = cn.prepareCall("{? = call ops$asy.carpetas.devuelve_maximo() }");
+            call.registerOutParameter(1, 12);
+            call.execute();
+            res = (String)call.getObject(1);
+
+        } catch (Exception e) {
+            String error = e.getMessage();
+        } finally {
+            if (!esTransaccional()) {
+                close();
+            }
+        }
+        return res;
+
+    }
+    
     public static String numeroGerencia(String gerencia) {
         String res = "";
         if (gerencia.equals("GNF"))

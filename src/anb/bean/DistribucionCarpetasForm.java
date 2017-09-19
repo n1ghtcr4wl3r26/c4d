@@ -9,6 +9,12 @@ public class DistribucionCarpetasForm extends ActionForm {
     private String codger;
     private String usuario;
     private String numero;
+    private String numerodesde;
+    private String numerohasta;
+    private String gerencia;
+    private String resultado;
+    private String numdesde;
+    private String numhasta;
 
     public void setBoton(String boton) {
         this.boton = boton;
@@ -56,5 +62,53 @@ public class DistribucionCarpetasForm extends ActionForm {
 
     public String getNumero() {
         return numero;
+    }
+
+    public void setNumerodesde(String numerodesde) {
+        this.numerodesde = numerodesde;
+    }
+
+    public String getNumerodesde() {
+        return numerodesde;
+    }
+
+    public void setNumerohasta(String numerohasta) {
+        this.numerohasta = numerohasta;
+    }
+
+    public String getNumerohasta() {
+        return numerohasta;
+    }
+
+    public void setGerencia(String gerencia) {
+        this.gerencia = gerencia;
+    }
+
+    public String getGerencia() {
+        return gerencia;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setNumdesde(String numdesde) {
+        this.numdesde = numdesde;
+    }
+
+    public String getNumdesde() {
+        return numdesde;
+    }
+
+    public void setNumhasta(String numhasta) {
+        this.numhasta = numhasta;
+    }
+
+    public String getNumhasta() {
+        return numhasta;
     }
 }

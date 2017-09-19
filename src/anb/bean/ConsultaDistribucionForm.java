@@ -9,6 +9,9 @@ public class ConsultaDistribucionForm extends ActionForm {
     private String codger;
     private String usuario;
     private String numero;
+    private String gerencia;
+    private String fecini;
+    private String fecfin;
 
     public void setBoton(String boton) {
         this.boton = boton;
@@ -56,5 +59,29 @@ public class ConsultaDistribucionForm extends ActionForm {
 
     public String getNumero() {
         return numero;
+    }
+
+    public void setGerencia(String gerencia) {
+        this.gerencia = gerencia;
+    }
+
+    public String getGerencia() {
+        return gerencia;
+    }
+
+    public void setFecini(String fecini) {
+        this.fecini = fecini;
+    }
+
+    public String getFecini() {
+        return fecini;
+    }
+
+    public void setFecfin(String fecfin) {
+        this.fecfin = fecfin;
+    }
+
+    public String getFecfin() {
+        return fecfin;
     }
 }

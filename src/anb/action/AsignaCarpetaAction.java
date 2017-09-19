@@ -41,7 +41,6 @@ public class AsignaCarpetaAction extends MappingDispatchAction {
                 request.setAttribute("ERROR",
                                      "El NIT " + bean.getNit().toString() + " no corresponde a un Importador de Despacho Directo.");
             } else {
-
                 ncarpeta = Util.devuelve_secuencia(bean.getNumero());
                 if (ncarpeta == null) {
                     request.setAttribute("ERROR",

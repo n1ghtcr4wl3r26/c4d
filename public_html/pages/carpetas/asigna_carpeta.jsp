@@ -15,6 +15,8 @@
                 <div class="col-sm-3">
                     <html:text property="nit" styleId="nit" maxlength="15" styleClass="form-control required numeric" size="15"/>
                 </div>
+            </div>
+            <div class="form-group">
                 <label class="col-sm-3 control-label">N&uacute;mero de Carpeta:</label>
                 <div class="col-sm-3">
                     <html:text property="numero" styleId="numero" maxlength="15" styleClass="form-control required numeric" size="15"/>
