@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="EstadoCarpetasForm" type="anb.bean.EstadoCarpetasForm"/>
+        <form-bean name="GenerarNumerosForm" type="anb.bean.GenerarNumerosForm"/>
+        <form-bean name="VerificaNumeroForm" type="anb.bean.VerificaNumeroForm"/>
+        <form-bean name="beanInput" type="anb.general.InputForm"/>
+        <form-bean name="beanCambioForm" type="anb.general.CambioForm"/>
+        <form-bean name="beanMenu" type="anb.general.MenuForm"/>        
+        <form-bean name="GestionCarpetaForm" type="anb.bean.GestionCarpetaForm"/>
+        <form-bean name="ConsultaCarpetaForm" type="anb.bean.ConsultaCarpetaForm"/>
+        <form-bean name="AsignaCarpetaForm" type="anb.bean.AsignaCarpetaForm"/>        
+        <form-bean name="ConsultaDistribucionForm" type="anb.bean.ConsultaDistribucionForm"/>
+        <form-bean name="ConsultaNitForm" type="anb.bean.ConsultaNitForm"/>
+        <form-bean name="DistribucionCarpetasForm" type="anb.bean.DistribucionCarpetasForm"/>        
+        <form-bean name="AdminForm" type="anb.bean.AdminForm"/>        
+    </form-beans>
+    <global-forwards>
+    </global-forwards>
+    <action-mappings>
+        <action path="/MenuAction" type="anb.general.MenuAction" name="beanMenu" scope="request">
+            <forward name="estadocarpeta" path="/estadoidx.do" redirect="true" />
+            <forward name="generar" path="/generaridx.do" redirect="true" />
+            <forward name="verifica" path="/verificaidx.do" redirect="true" />
+            
+            <forward name="gestion.carpeta" path="/gestioncarpeta.do" redirect="true" />            
+            <forward name="consulta.carpeta" path="/consultacarpeta.do" redirect="true" />
+            <forward name="asigna.carpeta" path="/asignacarpeta.do" redirect="true" />
+            <forward name="consulta.distribucion" path="/consultadistribucion.do" redirect="true" />
+            <forward name="consulta.nit" path="/consultanit.do" redirect="true" />
+            <forward name="distribucion.carpetas" path="/distribucioncarpetas.do" redirect="true" />
+           
+            <forward name="usuario" path="demo.user.mod" />
+            <forward name="account" path="/account.do" redirect="true" />
+            <forward name="password" path="/passwordidx.do" redirect="true" />                       
+        </action>
+        
+        <!-- CARPETAS -->
+        <action path="/generaridx" type="anb.action.GenerarNumerosAction" name="GenerarNumerosForm" parameter="generaridx" scope="request">
+            <forward name="index" path="generar.numeros.index" redirect="true" />
+            <forward name="ok" path="generar.numeros.index" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/estadoidx" type="anb.action.EstadoCarpetaAction" name="EstadoCarpetaForm" parameter="estadoidx" scope="request">
+            <forward name="index" path="estado.carpetas.index" redirect="true" />
+            <forward name="ok" path="estado.carpetas.index" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/verificaidx" type="anb.action.VerificaNumeroAction" name="VerificaNumeroForm" parameter="verificaidx" scope="request">
+            <forward name="index" path="verifica.numero.index" redirect="true" />
+            <forward name="ok" path="verifica.numero.index" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/gestioncarpeta" type="anb.action.GestionCarpetaAction" name="GestionCarpetaForm" parameter="gestioncarpetaidx" scope="request">
+            <forward name="index" path="gestion.carpeta" redirect="true" />
+            <forward name="ok" path="gestion.carpeta" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/consultacarpeta" type="anb.action.ConsultaCarpetaAction" name="ConsultaCarpetaForm" parameter="consultacarpetaidx" scope="request">
+            <forward name="index" path="consulta.carpeta" redirect="true" />
+            <forward name="ok" path="consulta.carpeta" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/asignacarpeta" type="anb.action.AsignaCarpetaAction" name="AsignaCarpetaForm" parameter="asignacarpetaidx" scope="request">
+            <forward name="index" path="asigna.carpeta" redirect="true" />
+            <forward name="ok" path="asigna.carpeta" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/consultadistribucion" type="anb.action.ConsultaDistribucionAction" name="ConsultaDistribucionForm" parameter="consultadistribucionidx" scope="request">
+            <forward name="index" path="consulta.distribucion" redirect="true" />
+            <forward name="ok" path="consulta.distribucion" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/consultanit" type="anb.action.ConsultaNitAction" name="ConsultaNitForm" parameter="consultanitidx" scope="request">
+            <forward name="index" path="consulta.nit" redirect="true" />
+            <forward name="ok" path="consulta.nit" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/distribucioncarpetas" type="anb.action.DistribucionCarpetasAction" name="DistribucionCarpetasForm" parameter="distribucioncarpetasidx" scope="request">
+            <forward name="index" path="distribucion.carpetas" redirect="true" />
+            <forward name="ok" path="distribucion.carpetas" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        
+        <action path="/logout" type="anb.general.LogoutAction" scope="request">
+            <forward name="login" path="/input.jsp" redirect="true"/>
+        </action>
+        
+        <action path="/log" type="anb.general.LogAction" scope="request">
+            <forward name="log" path="demo.log"/>
+        </action>
+        
+        <action path="/CambioAction" type="anb.general.CambioAction" name="beanCambioForm" scope="request"
+                input="aud.user.mod">
+            <forward name="usuario" path="aud.home"/>
+            <forward name="cambio" path="demo.user.mod"/>
+        </action>
+        
+        <action path="/ingreso" type="anb.general.InputAction" name="beanInput" scope="request">
+            <forward name="ok" path="aud.home" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>            
+        </action>
+        
+        <!-- ADMIN -->
+        <action path="/account" type="anb.action.AdminAction" name="AdminForm" parameter="account" scope="request">
+            <forward name="ok" path="admin.account" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/passwordidx" type="anb.action.AdminAction" name="AdminForm" parameter="passwordidx" scope="request">
+            <forward name="ok" path="admin.password" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+        <action path="/password" type="anb.action.AdminAction" name="AdminForm" parameter="password" scope="request">
+            <forward name="ok" path="admin.password" redirect="true" />
+            <forward name="nook" path="/input.jsp"/>
+        </action>
+    </action-mappings>
+    <controller nocache="true" processorClass="anb.general.AnbRequestProcessor" />
+    <message-resources parameter="anb.general.config"/>
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property value="/WEB-INF/tiles-defs.xml" property="definitions-config"/>
+        <set-property value="2" property="definitions-debug"/>
+        <set-property value="1" property="definitions-parser-details"/>
+        <set-property value="true" property="definitions-parse-validate"/>
+    </plug-in>
+</struts-config>
+

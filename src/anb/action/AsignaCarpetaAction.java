@@ -67,11 +67,11 @@ public class AsignaCarpetaAction extends MappingDispatchAction {
                             String nrocarpeta;
                             try {
 
-                                if (bean.getBoton().equals("Asociar")) {
+                                if (bean.getBoton().equals("Asigna")) {
                                     request.getSession().setAttribute("nrocarpeta", bean.getNumero().toString());
                                     usuario = (String)request.getSession().getAttribute("user");
                                     con = dc.abrirConexion();
-                                    call = con.prepareCall("{ ? = call ops$asy.carpetas.asocia_carpeta(?,?,?,?) }");
+                                    call = con.prepareCall("{ ? = call ops$asy.carpetas2.asocia_carpeta(?,?,?,?) }");
                                     call.registerOutParameter(1, 1);
                                     call.setString(2, bean.getNumero().toString());
                                     call.setString(3, bean.getNit().toString());

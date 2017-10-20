@@ -165,6 +165,17 @@ public class Util {
         }
         return res;
     }
+    
+    public static String esFechaMenorIgual(String fechaini, String fechafin) {
+        String res;
+        GeneralDao dao = new GeneralDao();
+        try {
+            res = dao.esFechaMenorIgual(fechaini, fechafin);
+        } catch (Exception ex) {
+            res = "1";
+        }
+        return res;
+    }
 
     public static Boolean esFecha(String fecha) {
         Boolean res;

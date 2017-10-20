@@ -52,7 +52,7 @@ public class DistribucionCarpetasAction extends MappingDispatchAction {
                 if (vdesde != null && vhasta != null) {
                     try {
                         con = dc.abrirConexion();
-                        call = con.prepareCall("{call ops$asy.carpetas.verifica_asignacion(?,?,?,?,?,?,?,?) }");
+                        call = con.prepareCall("{call ops$asy.carpetas2.verifica_asignacion(?,?,?,?,?,?,?,?) }");
                         call.setString(1, bean.getNumerodesde());
                         call.setString(2, bean.getNumerohasta());
                         call.registerOutParameter(3, 12);

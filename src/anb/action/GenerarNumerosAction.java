@@ -39,7 +39,7 @@ public class GenerarNumerosAction extends MappingDispatchAction {
             CallableStatement call = null;
             try {
                 con = dc.abrirConexion();
-                call = con.prepareCall("{? = call ops$asy.carpetas.inserta_parametros(?,?) }");
+                call = con.prepareCall("{? = call ops$asy.carpetas2.inserta_parametros(?,?) }");
                 call.registerOutParameter(1, 1);
                 call.setString(2, bean.getNumero());
                 call.setString(3, (String)request.getSession().getAttribute("user"));

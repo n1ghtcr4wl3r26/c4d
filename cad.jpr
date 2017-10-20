@@ -263,30 +263,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Poi-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-examples-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-excelant-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-ooxml-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-ooxml-schemas-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-scratchpad-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Xmlbeans-2.6.0.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -493,60 +469,6 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../LIBRERIAS/xlsx/poi-3.15.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Poi-3.15.jar"/>
-               <value n="id" v="Poi-3.15.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../LIBRERIAS/xlsx/poi-examples-3.15.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Poi-examples-3.15.jar"/>
-               <value n="id" v="Poi-examples-3.15.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../LIBRERIAS/xlsx/poi-excelant-3.15.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Poi-excelant-3.15.jar"/>
-               <value n="id" v="Poi-excelant-3.15.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../LIBRERIAS/xlsx/poi-ooxml-3.15.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Poi-ooxml-3.15.jar"/>
-               <value n="id" v="Poi-ooxml-3.15.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../LIBRERIAS/xlsx/poi-ooxml-schemas-3.15.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Poi-ooxml-schemas-3.15.jar"/>
-               <value n="id" v="Poi-ooxml-schemas-3.15.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../LIBRERIAS/xlsx/poi-scratchpad-3.15.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Poi-scratchpad-3.15.jar"/>
-               <value n="id" v="Poi-scratchpad-3.15.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
                   <url path="../LIBRERIAS/xlsx/xmlbeans-2.6.0.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
@@ -651,30 +573,6 @@
          </hash>
          <hash>
             <value n="id" v="Log4j-1.2.17.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-examples-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-excelant-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-ooxml-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-ooxml-schemas-3.15.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Poi-scratchpad-3.15.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

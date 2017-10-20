@@ -39,7 +39,7 @@ public class VerificaNumeroAction extends MappingDispatchAction {
             CallableStatement call = null;
             try {
                 con = dc.abrirConexion();
-                call = con.prepareCall("{? = call ops$asy.carpetas.devuelve_valido(?) }");
+                call = con.prepareCall("{? = call ops$asy.carpetas2.devuelve_valido(?) }");
                 call.registerOutParameter(1, 1);
                 call.setString(2, bean.getNumero());
                 call.execute();

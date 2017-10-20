@@ -43,7 +43,7 @@ public class GestionCarpetaAction extends MappingDispatchAction {
                 CallableStatement call2 = null;
                 try {
                     con = dc.abrirConexion();
-                    call = con.prepareCall("{? = call ops$asy.carpetas.carpeta_estado(?) }");
+                    call = con.prepareCall("{? = call ops$asy.carpetas2.carpeta_estado(?) }");
                     call.registerOutParameter(1, 1);
                     call.setString(2, bean.getNumero());
                     call.execute();
@@ -53,7 +53,7 @@ public class GestionCarpetaAction extends MappingDispatchAction {
                                              "El N&uacute;mero: " + bean.getNumero().toString() + " no es v&aacute;lido.");
                     } else {
                         if (mensaje.equals("1")) {
-                            call2 = con.prepareCall("{? = call ops$asy.carpetas.carpeta_asociada(?) }");
+                            call2 = con.prepareCall("{? = call ops$asy.carpetas2.carpeta_asociada(?) }");
                             call2.registerOutParameter(1, 1);
                             call2.setString(2, bean.getNumero());
                             call2.execute();
@@ -115,7 +115,7 @@ tbl + "<tr><td>" + "<button class='btn btn-info btn-sm newHide' type='button' id
                 CallableStatement call = null;
                 try {
                     con = dc.abrirConexion();
-                    call = con.prepareCall("{? = call ops$asy.carpetas.dar_baja(?,?,?) }");
+                    call = con.prepareCall("{? = call ops$asy.carpetas2.dar_baja(?,?,?) }");
                     call.registerOutParameter(1, 1);
                     call.setString(2, bean.getNumopc());
                     call.setString(3, bean.getUsuario());
@@ -149,7 +149,7 @@ tbl + "<tr><td>" + "<button class='btn btn-info btn-sm newHide' type='button' id
                 CallableStatement call = null;
                 try {
                     con = dc.abrirConexion();
-                    call = con.prepareCall("{? = call ops$asy.carpetas.rehabilitar(?,?,?) }");
+                    call = con.prepareCall("{? = call ops$asy.carpetas2.rehabilitar(?,?,?) }");
                     call.registerOutParameter(1, 1);
                     call.setString(2, bean.getNumopc());
                     call.setString(3, bean.getUsuario());

@@ -2,10 +2,7 @@ package anb.persistencia;
 
 
 import anb.entidades.Aduana;
-import anb.entidades.Fiscalizador;
-import anb.entidades.Gerencia;
 import anb.entidades.InfoControl;
-import anb.entidades.Paises;
 import anb.entidades.Tramite;
 
 import anb.general.Conexion;
@@ -27,11 +24,29 @@ public class GeneralDao extends Conexion{
         super();
     }
     
+    public String esFechaMenorIgual(String fechaini, String fechafin) throws SQLException, ClassNotFoundException, NamingException {
+        String valor;
+        try {
+            open();
+            call = cn.prepareCall("{ ? = call ops$asy.carpetas2.valida_fechas ( ?,? )}");
+            call.registerOutParameter(1, OracleTypes.VARCHAR);
+            call.setString(2, fechaini);
+            call.setString(3, fechafin);
+            call.execute();
+            valor = (String) call.getObject(1);  
+        } finally {
+            if (cn != null) {
+                cn.close();
+            }
+        }
+        return valor;        
+    }
+    
     public String devuelve_maximo() throws SQLException, ClassNotFoundException, NamingException {
         String res = "";
         try {
             open();
-            call = cn.prepareCall("{? = call ops$asy.carpetas.devuelve_maximo() }");
+            call = cn.prepareCall("{? = call ops$asy.carpetas2.devuelve_maximo() }");
             call.registerOutParameter(1, 12);
             call.execute();
             res = (String)call.getObject(1);
@@ -213,7 +228,7 @@ public class GeneralDao extends Conexion{
         String res = "";
         try {
             open();
-            call = cn.prepareCall("{? = call ops$asy.carpetas.devuelve_secuencia(?) }");
+            call = cn.prepareCall("{? = call ops$asy.carpetas2.devuelve_secuencia(?) }");
             call.registerOutParameter(1, 12);
             call.setString(2, numero);
             call.execute();
@@ -233,7 +248,7 @@ public class GeneralDao extends Conexion{
         String res = "";
         try {
             open();
-            call = cn.prepareCall("{? = call ops$asy.carpetas.devuelve_asociado(?) }");
+            call = cn.prepareCall("{? = call ops$asy.carpetas2.devuelve_asociado(?) }");
             call.registerOutParameter(1, 12);
             call.setString(2, numero);
             call.execute();
@@ -254,7 +269,7 @@ public class GeneralDao extends Conexion{
         String res = "";
         try {
             open();
-            call = cn.prepareCall("{? = call ops$asy.carpetas.carpeta_asociada(?) }");
+            call = cn.prepareCall("{? = call ops$asy.carpetas2.carpeta_asociada(?) }");
             call.registerOutParameter(1, 12);
             call.setString(2, numero);
             call.execute();
@@ -277,7 +292,7 @@ public class GeneralDao extends Conexion{
         String res = "";
         try {
             open();
-            call = cn.prepareCall("{call ops$asy.carpetas.asignacion_aduana(?,?,?,?,?) }");
+            call = cn.prepareCall("{call ops$asy.carpetas2.asignacion_aduana(?,?,?,?,?) }");
             call.setString(1, desde);
             call.setString(2, hasta);
             call.setString(3, aduana);
@@ -299,7 +314,7 @@ public class GeneralDao extends Conexion{
         String res = "";
         try {
             open();
-            call = cn.prepareCall("{? = call ops$asy.carpetas.es_despacho_directo(?) }");
+            call = cn.prepareCall("{? = call ops$asy.carpetas2.es_despacho_directo(?) }");
             call.registerOutParameter(1, 12);
             call.setString(2, nit);
             call.execute();
@@ -316,69 +331,7 @@ public class GeneralDao extends Conexion{
     }
 
     
-    public List<Paises> obtenerPaises() throws SQLException, ClassNotFoundException, NamingException {
-        List<Paises> paises = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.LISTA_PAISES }");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                paises = new ArrayList<Paises>();
-                Paises paisini = new Paises();
-                paisini.setCodigo("%");
-                paisini.setDescripcion("Todos los Paises");
-                paises.add(paisini);
-                
-                while (rs.next()) {
-                    Paises pais = new Paises();
-                    pais.setCodigo(rs.getString(1));
-                    pais.setDescripcion(rs.getString(2));
-                    paises.add(pais);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return paises;
-    }
     
-    public List<Paises> obtenerPaises2() throws SQLException, ClassNotFoundException, NamingException {
-        List<Paises> paises = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.LISTA_PAISES }");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                paises = new ArrayList<Paises>();
-                
-                while (rs.next()) {
-                    Paises pais = new Paises();
-                    pais.setCodigo(rs.getString(1));
-                    pais.setDescripcion(rs.getString(2));
-                    paises.add(pais);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return paises;
-    }
     
     public InfoControl devuelveControl(String codigo) throws SQLException, ClassNotFoundException, NamingException {
        InfoControl inf = new InfoControl();       
@@ -474,272 +427,7 @@ public class GeneralDao extends Conexion{
        return inf;
     }
     
-    public List<Fiscalizador> obtenerFiscalizadores(String Gerencia) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.lista_fiscalizadores (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, Gerencia);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fis.setCi(rs.getString("ci"));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
     
-    public List<Fiscalizador> obtenerFiscalizadoresT(String Gerencia) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.lista_fiscalizadores (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, Gerencia);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                Fiscalizador fisa = new Fiscalizador();
-                fisa.setCodigo("%");
-                fisa.setNombre("Todos");
-                fiscalizadores.add(fisa);
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fis.setCi(rs.getString("ci"));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
-    
-    public List<Fiscalizador> obtenerSupervisores(String Gerencia) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.lista_supervisores (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, Gerencia);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fis.setCi(rs.getString("ci"));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
-    
-    public List<Fiscalizador> obtenerSupervisoresT(String Gerencia) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.lista_supervisores (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, Gerencia);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                Fiscalizador fisa = new Fiscalizador();
-                fisa.setCodigo("%");
-                fisa.setNombre("Todos");
-                fiscalizadores.add(fisa);
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
-    
-    public List<Fiscalizador> obtenerFuncionarios(String Gerencia) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.lista_funcionarios (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, Gerencia);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fis.setCi(rs.getString("ci"));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
-    
-    
-    public List<Gerencia> obtenerGerencias(String Gerencia) throws SQLException, ClassNotFoundException, NamingException {
-        List<Gerencia> gerencias = null;
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.lista_gerencias (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, Gerencia);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                gerencias = new ArrayList<Gerencia>();
-                while (rs.next()) {
-                    Gerencia ger = new Gerencia();
-                    ger.setCodigo(rs.getString("codigo"));
-                    ger.setDescripcion(rs.getString("descripcion"));
-                    gerencias.add(ger);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return gerencias;
-    }
-    
-    public List<Fiscalizador> devuelveFisAsignados(String codigo) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        int cont = 1;        
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.devuelve_fis_asignados (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, codigo);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setId(rs.getString("id"));
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fis.setCargo(rs.getString("cargo"));
-                    fis.setFechaasig(rs.getString("fecha"));
-                    fis.setUsuasig(rs.getString("usuario"));
-                    fis.setCi(rs.getString("ci"));
-                    fis.setNumero(String.valueOf(cont++));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
-    
-    public List<Fiscalizador> devuelveFisAccesos(String codigo) throws SQLException, ClassNotFoundException, NamingException {
-        List<Fiscalizador> fiscalizadores = null;
-        int cont = 1;        
-        try {
-            open();
-            call = cn.prepareCall("{ ? = call PKG_GENERAL.devuelve_fis_accesos (?)}");
-            call.registerOutParameter(1, OracleTypes.CURSOR);
-            call.setString(2, codigo);
-            call.execute();
-
-            rs = (ResultSet)call.getObject(1);
-            if (rs != null) {
-                fiscalizadores = new ArrayList<Fiscalizador>();
-                while (rs.next()) {
-                    Fiscalizador fis = new Fiscalizador();
-                    fis.setId(rs.getString("id"));
-                    fis.setCodigo(rs.getString("codigo"));
-                    fis.setNombre(rs.getString("nombre"));
-                    fis.setCargo(rs.getString("cargo"));
-                    fis.setFechaasig(rs.getString("fecha"));
-                    fis.setUsuasig(rs.getString("usuario"));
-                    fis.setCi(rs.getString("ci"));
-                    fis.setNumero(String.valueOf(cont++));
-                    fiscalizadores.add(fis);
-                }
-            }
-        } catch (Exception e){
-            String error = e.getMessage();
-        }
-        finally {
-            if (!esTransaccional()) {
-                close();
-            }
-        }
-        return fiscalizadores;
-    }
     
     public List<Tramite> tramites(String codigo) throws SQLException, ClassNotFoundException,
                                                                   NamingException {
